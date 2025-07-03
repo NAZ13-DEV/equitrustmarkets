@@ -8,9 +8,9 @@ function Security() {
       <p className="text-gray-500 text-center mb-7 text-sm md:text-base max-w-xl">
         Audited and secured by leading blockchain experts to ensure the safety of your assets
       </p>
-      <button className="mb-10 px-8 py-2 border border-green-500 text-green-700 font-semibold rounded-lg hover:bg-green-50 transition">
+      {/* <button className="mb-10 px-8 py-2 border border-green-500 text-green-700 font-semibold rounded-lg hover:bg-green-50 transition">
         View audits
-      </button>
+      </button> */}
       <div className="w-full flex justify-center">
         <img
           src={security}

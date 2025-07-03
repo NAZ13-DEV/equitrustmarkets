@@ -1,0 +1,49 @@
+
+<svg width="100%" height="100%" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for flowing lines -->
+    <linearGradient id="curveGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b1e5c7"/>
+      <stop offset="100%" stop-color="#4fbf88"/>
+    </linearGradient>
+
+    <!-- Bubble fill -->
+    <linearGradient id="bubbleGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fde6ea"/>
+      <stop offset="100%" stop-color="#fcdde4"/>
+    </linearGradient>
+
+    <!-- Pattern for lower-left corner -->
+    <pattern id="dotsPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#d4f4e4"/>
+    </pattern>
+  </defs>
+
+  <!-- LEFT SIDE EMPTY -->
+  <rect x="0" y="0" width="700" height="600" fill="white"/>
+  <rect x="0" y="500" width="400" height="100" fill="url(#dotsPattern)" opacity="0.4"/>
+
+  <!-- RIGHT SIDE DECORATIVE FLOW -->
+  <path d="M700,80 C820,160 920,0 1120,80" stroke="url(#curveGradient)" stroke-width="4" fill="none" opacity="0.9"/>
+  <path d="M700,200 C820,280 920,120 1120,200" stroke="url(#curveGradient)" stroke-width="4" fill="none" opacity="0.8"/>
+  <path d="M700,320 C820,400 920,240 1120,320" stroke="url(#curveGradient)" stroke-width="4" fill="none" opacity="0.7"/>
+  <path d="M700,440 C820,520 920,360 1120,440" stroke="url(#curveGradient)" stroke-width="4" fill="none" opacity="0.6"/>
+
+  <!-- Dynamic circles on paths -->
+  <circle cx="1120" cy="80" r="60" fill="url(#bubbleGradient)" opacity="0.95"/>
+  <circle cx="1120" cy="200" r="60" fill="url(#bubbleGradient)" opacity="0.95"/>
+  <circle cx="1120" cy="320" r="60" fill="url(#bubbleGradient)" opacity="0.95"/>
+  <circle cx="1120" cy="440" r="60" fill="url(#bubbleGradient)" opacity="0.95"/>
+
+  <!-- Main broker-related terms -->
+  <text x="1120" y="86" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#1a1a1a">95% Satisfied</text>
+  <text x="1120" y="206" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#1a1a1a">Tight Spreads</text>
+  <text x="1120" y="326" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#1a1a1a">Zero Commission</text>
+  <text x="1120" y="446" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#1a1a1a">Multi-Asset Access</text>
+
+  <!-- Subtext for context -->
+  <text x="1120" y="105" text-anchor="middle" font-family="Arial" font-size="13" fill="#555">Global clients trust our platform</text>
+  <text x="1120" y="225" text-anchor="middle" font-family="Arial" font-size="13" fill="#555">From 0.0 pips on majors</text>
+  <text x="1120" y="345" text-anchor="middle" font-family="Arial" font-size="13" fill="#555">No extra trading fees</text>
+  <text x="1120" y="465" text-anchor="middle" font-family="Arial" font-size="13" fill="#555">Trade Forex, Indices, Metals</text>
+</svg>

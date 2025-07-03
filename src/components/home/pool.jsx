@@ -13,12 +13,15 @@ function Pool() {
           backgroundSize: 'cover',
         }}
       >
-        {/* Left: Text Content */}
-        <div className="w-full md:w-1/2 px-6 sm:px-10 py-10 sm:py-14 md:pl-12 md:py-20 flex flex-col items-center md:items-start justify-center z-10 text-center md:text-left">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
+        {/* ✅ Overlay only for small screens */}
+        <div className="absolute inset-0 bg-black/40 sm:hidden z-0" />
+
+        {/* ✅ Text Content */}
+        <div className="w-full md:w-1/2 px-6 sm:px-10 py-10 sm:py-14 md:pl-12 md:py-20 flex flex-col items-center md:items-start justify-center z-10 text-center md:text-left text-white md:text-black">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 leading-tight">
             SD Utility Pool
           </h2>
-          <p className="text-gray-700 text-base sm:text-lg mb-8 max-w-md">
+          <p className="text-white sm:text-black font-bold md:font-normal sm:text-lg mb-8 max-w-md">
             Contribute to Ethereum decentralisation by delegating your $SD to the Pool and receive double digit rewards!
           </p>
           <button className="px-8 py-3 rounded-lg bg-green-600 text-white font-bold shadow hover:bg-green-700 transition text-base sm:text-lg">
@@ -26,7 +29,7 @@ function Pool() {
           </button>
         </div>
 
-        {/* Right: background only (no content, just visual space) */}
+        {/* Right side space holder */}
         <div className="hidden md:block w-1/2 h-full" />
       </div>
 

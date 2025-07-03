@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cabbage from '../../img/cabbage.png';
 import deeper from '../../img/deeper.png';
 import liquidity from '../../img/liquidity.png';
@@ -25,6 +25,14 @@ export default function Update() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  useEffect(() => {
+    if (!isMobile) return;
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % blogPosts.length);
+    }, 2000); // 3 seconds
+    return () => clearInterval(interval);
+  }, [isMobile, blogPosts.length]);
 
   const handleDotClick = (index) => {
     setActiveIndex(index);

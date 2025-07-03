@@ -10,6 +10,7 @@ import Update from '../components/home/Update'
 import NewsLetter from '../components/home/Newsletter'
 import Faq from '../components/home/Faq'
 import Footer from '../components/layout/Footer'
+import More from '../components/home/More'
 
 const Home = () => {
     return (
@@ -25,6 +26,9 @@ const Home = () => {
             <Update/>
             <NewsLetter/>
             <Faq/>
+            <div className='mt-12'>
+            <More/>
+            </div>
             </div>
             <Footer/>
         </div>

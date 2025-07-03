@@ -5,7 +5,10 @@ export default function Hero() {
   return (
     <section
       className="relative w-full min-h-[500px] lg:min-h-[600px] flex flex-col-reverse lg:flex-row items-center justify-between overflow-hidden bg-white lg:bg-cover lg:bg-no-repeat lg:bg-right"
-      style={{ backgroundImage: `url(${heroBg})` }}
+      style={{
+         backgroundImage: `url(${heroBg})`,
+        backgroundRepeat: 'no-repeat'
+    }}
     >
       {/* Left: Content */}
       <div className="z-10 flex-1 flex flex-col items-start justify-center px-6 md:px-12 lg:px-20 py-10 md:py-0 animate-hero-fade-in bg-white/80 lg:bg-white/90 lg:backdrop-blur-sm lg:max-w-[55%] lg:min-h-full">

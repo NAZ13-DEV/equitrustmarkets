@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
@@ -44,49 +44,50 @@ export default function Faq() {
   const [openIndexes, setOpenIndexes] = useState({});
 
   const toggleAnswer = (index) => {
-    setOpenIndexes((prev) => ({ ...prev, [index]: !prev[index] }));
+    setOpenIndexes((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
   };
 
   return (
     <section className="bg-white w-full py-16 px-4 md:px-8">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-10">
-          Frequently Asked Questions
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-10">
+          Frequently asked questions
         </h2>
 
-        <div className="space-y-4">
-          {(expanded ? faqs : faqs.slice(0, 3)).map((faq, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-300"
-            >
-              <button
-                className="w-full flex justify-between items-center px-4 py-4 text-left text-gray-800 font-semibold text-sm md:text-base hover:bg-gray-50 transition"
-                onClick={() => toggleAnswer(index)}
-              >
-                {faq.question}
-                {openIndexes[index] ? (
-                  <ChevronUp className="w-5 h-5 text-green-500" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-green-500" />
+        <div className="space-y-3">
+          {(expanded ? faqs : faqs.slice(0, 3)).map((faq, index) => {
+            const isOpen = openIndexes[index];
+            return (
+              <div key={index} className="bg-[#F9FAFB] rounded-lg">
+                <button
+                  onClick={() => toggleAnswer(index)}
+                  className="flex items-center justify-between w-full py-3 px-4 text-base font-semibold text-gray-900 rounded-lg transition-all"
+                >
+                  {faq.question}
+                  <ChevronDown
+                    className={`w-5 h-5 text-gray-700 transition-transform duration-300 ${
+                      isOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {isOpen && (
+                  <div className="px-4 pb-4 text-gray-700 text-sm leading-relaxed animate-fade-in">
+                    {faq.answer}
+                  </div>
                 )}
-              </button>
-              <div
-                className={`px-4 pb-4 text-gray-600 text-sm transition-all duration-500 ease-in-out ${
-                  openIndexes[index] ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-                }`}
-              >
-                {faq.answer}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {!expanded && (
-          <div className="text-center mt-8">
+          <div className="text-center mt-10">
             <button
               onClick={() => setExpanded(true)}
-              className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition"
+              className="px-6 py-2 border border-green-500 text-green-600 font-medium rounded-lg transition hover:bg-green-50"
             >
               View more
             </button>
