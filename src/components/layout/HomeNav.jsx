@@ -91,7 +91,7 @@ export default function HomeNav() {
             <Menu className="w-7 h-7 text-green-600" />
           </button>
           <img src={Logo} alt="Logo" className="w-8 h-8" />
-          <span className="text-xl font-bold tracking-tight text-gray-900 ml-1">EquitrustMarkets</span>
+          <span className="text-xl font- tracking-tight text-gray-900 ml-1">EquitrustMarkets</span>
         </div>
       </nav>
 
