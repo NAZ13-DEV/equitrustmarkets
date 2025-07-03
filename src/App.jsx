@@ -1,7 +1,7 @@
 // App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Utility from './page/Utility';
+import Home from './page/Home';
 import Defi from './page/Defi';
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-100">
         <Routes>
-          <Route path="/" element={<Utility />} />
-          <Route path="/defi" element={<Defi />} />
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/defi" element={<Defi />} /> */}
          
         </Routes>
       </div>
