@@ -52,7 +52,7 @@ const ForgotPasswordSection = () => {
     <div className="relative px-4 py-24 overflow-hidden bg-white md:py-36">
       <Toaster
         position="top-center"
-        toastOptions={{ style: { background: "#142528", color: "#fff" } }}
+        toastOptions={{ style: { background: "#016630", color: "#fff" } }}
       />
 
       {/* Background Glow */}

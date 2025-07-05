@@ -1,33 +1,73 @@
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './page/Home';
-import Defi from './page/Defi';
-import Login from './page/Login';
-import Register from './page/Register';
-import ForgotPassword from './page/ForgotPassword';
-import ResetMessage from './page/ResetMessage';
-import VerifyEmail from './page/VerifyEmail';
-import ValidateEmail from './page/ValidateEmail';
+// Pages
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetMessage from "./pages/ResetMessage";
+import VerifyEmail from "./pages/VerifyEmail";
+import ValidateEmail from "./pages/ValidateEmail";
+import VerifyResetPassword from "./pages/VerifyResetPassword";
+import ChangePassword from "./pages/ChangePassword";
+import ResetPassword from "./pages/ResetPassword";
+import PageNotFound from "./pages/PageNotFound";
 
-function App() {
+// Route Guards
+import PublicRoute from "./components/routes/PublicRoute";
+import ProtectedRoute from "./components/routes/ProtectedRoute";
+
+// Title Map
+const titleMap = {
+  "/": "Home | EquitrustMarkets",
+  "/home": "Home | EquitrustMarkets",
+  "/login": "Login | EquitrustMarkets",
+  "/register": "Register | EquitrustMarkets",
+  "/forgot_password": "Forgot Password | EquitrustMarkets",
+  "/reset_message": "Reset Message | EquitrustMarkets",
+  "/verify_email": "Verify Email | EquitrustMarkets",
+  "/ValidateEmail": "Validate Email | EquitrustMarkets",
+  "/VerifyResetPassword": "Verify Reset Password | EquitrustMarkets",
+  "/ChangePassword": "Change Password | EquitrustMarkets",
+  "/passwordReset": "Password Reset | EquitrustMarkets",
+};
+
+// Title Updater Component
+const TitleUpdater = () => {
+  const location = useLocation();
+  useEffect(() => {
+    const defaultTitle = "EquitrustMarkets";
+    document.title = titleMap[location.pathname] || defaultTitle;
+  }, [location.pathname]);
+  return null;
+};
+
+const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/forgot_password" element={<ForgotPassword />} />
-          <Route path="/reset_message" element={<ResetMessage />} />
-          <Route path="/verify_email" element={<VerifyEmail />} />
-          <Route path="/ValidateEmail" element={<ValidateEmail />} />
-          
-        </Routes>
-      </div>
+      <TitleUpdater />
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<PublicRoute><Home /></PublicRoute>} />
+        <Route path="/home" element={<PublicRoute><Home /></PublicRoute>} />
+        <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
+        <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+        <Route path="/forgot_password" element={<PublicRoute><ForgotPassword /></PublicRoute>} />
+        <Route path="/reset_message" element={<PublicRoute><ResetMessage /></PublicRoute>} />
+        <Route path="/verify_email" element={<PublicRoute><VerifyEmail /></PublicRoute>} />
+        <Route path="/ValidateEmail" element={<PublicRoute><ValidateEmail /></PublicRoute>} />
+        <Route path="/VerifyResetPassword" element={<PublicRoute><VerifyResetPassword /></PublicRoute>} />
+        <Route path="/ChangePassword" element={<PublicRoute><ChangePassword /></PublicRoute>} />
+
+        {/* Protected Routes */}
+        <Route path="/passwordReset" element={<ProtectedRoute><ResetPassword /></ProtectedRoute>} />
+
+        {/* Fallback */}
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
     </Router>
   );
-}
+};
 
 export default App;
