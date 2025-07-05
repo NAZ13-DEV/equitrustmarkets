@@ -27,7 +27,7 @@ const icons = {
 const Footer = () => {
   return (
     <footer className="bg-[#0B1D1E] text-white py-12 px-4">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div className="grid grid-cols-1 gap-8 mx-auto max-w-7xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         <div className="flex flex-col items-start gap-4">
           <img src={Logo} alt="Logo" className="w-8 h-8" />
           <div className="flex items-center gap-3 mt-2">
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-sm font-bold mb-3">Networks</h4>
+          <h4 className="mb-3 text-sm font-bold">Networks</h4>
           <ul className="space-y-2 text-sm text-gray-300">
             <li>Ethereum</li>
             <li>Hedera</li>
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-sm font-bold mb-3">Governance</h4>
+          <h4 className="mb-3 text-sm font-bold">Governance</h4>
           <ul className="space-y-2 text-sm text-gray-300">
             <li className="flex items-center gap-2">
               SD Utility Pool
@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-sm font-bold mb-3">Analytics</h4>
+          <h4 className="mb-3 text-sm font-bold">Analytics</h4>
           <ul className="space-y-2 text-sm text-gray-300">
             <li>Dune Analytics</li>
           </ul>
@@ -75,7 +75,7 @@ const Footer = () => {
 
         <div className="flex flex-col gap-8">
           <div>
-            <h4 className="text-sm font-bold mb-3">Developers</h4>
+            <h4 className="mb-3 text-sm font-bold">Developers</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li>Github</li>
               <li>ETHx Litepaper</li>
@@ -83,9 +83,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-bold mb-3">About</h4>
+            <h4 className="mb-3 text-sm font-bold">About</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li>About Stader</li>
+              <li>About Equitrustmarkets</li>
               <li>Blogs</li>
               <li>Download Press Kit</li>
             </ul>
@@ -93,8 +93,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="mt-12 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 px-4">
-        <p>© Copyright 2025 Stader. All rights reserved.</p>
+      <div className="flex flex-col items-center justify-between px-4 mt-12 text-xs text-gray-400 md:flex-row">
+        <p>© Copyright 2025 Equitrustmarkets. All rights reserved.</p>
         <div className="flex gap-4 mt-2 md:mt-0">
           <a href="#" className="hover:underline">Terms of service</a>
           <a href="#" className="hover:underline">Privacy policy</a>

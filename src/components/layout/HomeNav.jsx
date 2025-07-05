@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import viteLogo from '../../../public/vite.svg';
 import Logo from '../../img/stader-icon.svg';
+import { Link } from 'react-router-dom';
 
 // Social icons (use Lucide or SVGs as placeholders)
 const socials = [
@@ -40,7 +40,7 @@ export default function HomeNav() {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden lg:flex w-full bg-white px-6 py-3 items-center justify-between shadow-sm">
+      <nav className="items-center justify-between hidden w-full px-6 py-3 bg-white shadow-sm lg:flex">
         {/* Logo & Nav */}
         <div className="flex items-center gap-10">
           <img src={Logo} alt="Logo" className="w-8 h-8" />
@@ -59,7 +59,7 @@ export default function HomeNav() {
                 {/* Dropdown */}
                 {openDropdown === idx && link.dropdown && (
                   <div
-                    className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg py-2 z-20"
+                    className="absolute left-0 z-20 w-40 py-2 mt-2 bg-white rounded-lg shadow-lg"
                     onMouseEnter={() => setOpenDropdown(idx)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
@@ -81,23 +81,23 @@ export default function HomeNav() {
         {/* Socials & Auth */}
         <div className="flex items-center gap-4">
           {socials.map((s) => (
-            <button key={s.name} className="w-10 h-10 flex items-center justify-center rounded-full bg-green-50 hover:bg-green-100">
+            <button key={s.name} className="flex items-center justify-center w-10 h-10 rounded-full bg-green-50 hover:bg-green-100">
               {s.icon}
             </button>
           ))}
-          <button className="ml-4 px-6 py-2 rounded-lg bg-green-500 text-white font-semibold hover:bg-green-600">Register</button>
-          <button className="ml-2 px-6 py-2 rounded-lg border border-green-500 text-green-600 font-semibold hover:bg-green-50">Login</button>
+          <Link to={'/register'} className="px-6 py-2 ml-4 font-semibold text-white bg-green-500 rounded-lg hover:bg-green-600">Register</Link>
+          <Link to={'/login'} className="px-6 py-2 ml-2 font-semibold text-green-600 border border-green-500 rounded-lg hover:bg-green-50">Login</Link>
         </div>
       </nav>
 
       {/* Mobile Navbar */}
-      <nav className="flex lg:hidden w-full bg-white px-4 py-3 items-center shadow-sm bg-[#142528]">
+      <nav className="flex items-center w-full px-4 py-3 bg-white shadow-sm lg:hidden">
         <div className="flex items-center gap-4">
-          <button onClick={() => setSidebarOpen(true)} className="p-2 rounded-lg hover:bg-green-50 transition">
-            <Menu className="w-7 h-7 text-green-600" />
+          <button onClick={() => setSidebarOpen(true)} className="p-2 transition rounded-lg hover:bg-green-50">
+            <Menu className="text-green-600 w-7 h-7" />
           </button>
           <img src={Logo} alt="Logo" className="w-8 h-8" />
-          <span className="text-xl font-semibold tracking-tight text-gray-900 ml-1">EquitrustMarkets</span>
+          <span className="ml-1 text-xl font-semibold tracking-tight text-gray-900">EquitrustMarkets</span>
         </div>
       </nav>
 
@@ -107,7 +107,7 @@ export default function HomeNav() {
         <div className="fixed inset-0 z-50 flex ">
           {/* Overlay: clicking this closes the sidebar */}
           {/* <div
-            className="fixed inset-0 z-40 bg-black bg-opacity-30 cursor-pointer"
+            className="fixed inset-0 z-40 bg-black cursor-pointer bg-opacity-30"
             onClick={() => setSidebarOpen(false)}
           /> */}
           {/* Sidebar: clicking inside does NOT close */}
@@ -122,7 +122,7 @@ export default function HomeNav() {
               </div>
               <button
                 onClick={() => setSidebarOpen(false)}
-                className="p-2 rounded-lg hover:bg-green-100 transition"
+                className="p-2 transition rounded-lg hover:bg-green-100"
               >
                 <X className="w-6 h-6 text-white" />
               </button>
@@ -133,19 +133,19 @@ export default function HomeNav() {
               {navLinks.map((link) => (
                 <div key={link.label}>
                   <details className="group">
-                    <summary className="flex items-center justify-between w-full py-3 px-2 text-lg font-semibold cursor-pointer transition-colors text-white hover:text-green-400">
+                    <summary className="flex items-center justify-between w-full px-2 py-3 text-lg font-semibold text-white transition-colors cursor-pointer hover:text-green-400">
                       {link.label}
                       {link.dropdown && (
-                        <ChevronDown className="w-5 h-5 text-white group-open:text-green-400 transition-transform group-open:rotate-180" />
+                        <ChevronDown className="w-5 h-5 text-white transition-transform group-open:text-green-400 group-open:rotate-180" />
                       )}
                     </summary>
                     {link.dropdown && (
-                      <div className="ml-4 mt-1 flex flex-col gap-1 animate-fade-in">
+                      <div className="flex flex-col gap-1 mt-1 ml-4 animate-fade-in">
                         {link.dropdown.map((item) => (
                           <a
                             key={item}
                             href="#"
-                            className="block px-2 py-1 text-gray-200 hover:text-green-400 text-base transition"
+                            className="block px-2 py-1 text-base text-gray-200 transition hover:text-green-400"
                           >
                             {item}
                           </a>
@@ -159,8 +159,8 @@ export default function HomeNav() {
 
             {/* Auth Buttons */}
             <div className="flex flex-col gap-3 pt-2">
-              <button className="w-full px-6 py-3 rounded-full bg-gradient-to-r from-green-500 to-green-700 text-white font-bold shadow-md hover:scale-105 transition">Register</button>
-              <button className="w-full px-6 py-3 rounded-full border-2 border-green-500 text-green-500 font-bold shadow-md hover:bg-green-50 transition">Login</button>
+              <Link to={'/register'} className="w-full px-6 py-3 font-bold text-center text-white transition rounded-full shadow-md bg-gradient-to-r from-green-500 to-green-700 hover:scale-105">Register</Link>
+              <Link to={'/login'} className="w-full px-6 py-3 font-bold text-center text-green-500 transition border-2 border-green-500 rounded-full shadow-md hover:bg-green-50">Login</Link>
             </div>
           </aside>
           <style>{`
