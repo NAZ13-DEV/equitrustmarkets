@@ -10,7 +10,8 @@ export default {
         outfit: ['Outfit', 'sans-serif'],
       },
         screens: {
-        
+        'xxs': { raw: '(min-width: 315px) and (max-width: 380px)' }, 
+        'xs': { raw: '(min-width: 381px) and (max-width: 424px)' },
       },
       keyframes: {
         glow: {

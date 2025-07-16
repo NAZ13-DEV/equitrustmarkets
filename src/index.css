@@ -11,3 +11,68 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
 }
+
+
+@layer components {
+  .forex-form-theme {
+    @apply text-[#3f6870] text-sm md:text-base;
+  }
+
+  .forex-form-theme h5 {
+    @apply mb-3 text-lg font-bold md:text-xl;
+  }
+
+  .forex-form-theme input,
+  .forex-form-theme select {
+    @apply w-full px-3 py-2 rounded-md bg-[#e6f8ef] border border-gray-300 focus:border-[#07A658] focus:ring-2 focus:ring-[#07A658]/30 transition;
+  }
+
+  .forex-form-theme input:focus,
+  .forex-form-theme select:focus {
+    @apply outline-none;
+  }
+
+  .forex-form-theme .scrollable-container {
+    @apply pr-2 overflow-y-auto;
+  }
+
+  .forex-form-theme button[type="submit"] {
+    @apply w-full py-3 font-semibold text-white transition duration-300 ease-in-out rounded-lg;
+  }
+
+  /* Buy button (green) */
+  .forex-form-theme .bg-customGreen,
+  .forex-form-theme button.bg-customGreen {
+    @apply bg-[#07A658] hover:bg-[#068e4c];
+  }
+ 
+  /* Sell button (red) */
+  .forex-form-theme .bg-customRed,
+  .forex-form-theme button.bg-customRed {
+    @apply bg-[#E53935] hover:bg-[#c62828];
+  }
+
+  .forex-form-theme .border-customRed {
+    @apply border-[#E53935] bg-[#E53935];
+  }
+
+  .forex-form-theme button[type='submit']:disabled {
+    @apply cursor-not-allowed opacity-60 ;
+  }
+
+  /* Animation */
+  .forex-form-theme > div {
+    animation: fadeSlideIn 0.6s ease-in-out both;
+  }
+
+  @keyframes fadeSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

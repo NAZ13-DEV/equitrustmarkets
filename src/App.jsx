@@ -17,6 +17,7 @@ import PageNotFound from "./pages/PageNotFound";
 // Route Guards
 import PublicRoute from "./components/routes/PublicRoute";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
+import Dashboard from "./pages/Dashboard";
 
 // Title Map
 const titleMap = {
@@ -62,6 +63,8 @@ const App = () => {
 
         {/* Protected Routes */}
         <Route path="/passwordReset" element={<ProtectedRoute><ResetPassword /></ProtectedRoute>} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+
 
         {/* Fallback */}
         <Route path="*" element={<PageNotFound />} />
