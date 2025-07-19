@@ -1,5 +1,6 @@
 import React from 'react';
 import bubble from '../../img/bubble.png'; // Use your background image
+import { Link } from 'react-router-dom';
 
 const UpgradeBanner = () => {
   return (
@@ -24,12 +25,12 @@ const UpgradeBanner = () => {
           </div>
 
           <div className="flex gap-2 md:gap-3">
-            <button className="bg-[#07A658] hover:bg-[#05944f] text-white text-[13px] font-semibold px-4 py-2 rounded transition">
+            <Link to={'/register'} className="bg-[#07A658] hover:bg-[#05944f] text-white text-[13px] font-semibold px-4 py-2 rounded transition">
               Register
-            </button>
-            <button className="bg-[#2b2e38] hover:bg-[#3a3d47] text-white text-[13px] font-semibold px-4 py-2 rounded transition">
+            </Link>
+            <Link to={'/register'} className="bg-[#2b2e38] hover:bg-[#3a3d47] text-white text-[13px] font-semibold px-4 py-2 rounded transition">
               Try free demo
-            </button>
+            </Link>
           </div>
         </div>
       </div>

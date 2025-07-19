@@ -29,11 +29,11 @@ const DepositWithdrawHero = () => {
           transition={{ duration: 0.7 }}
           className="text-white max-w-md"
         >
-          <h1 className="text-3xl md:text-4xl font-semibold leading-snug mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold leading-snug mb-6">
             Deposits and <br /> withdrawals
           </h1>
           <div className="flex gap-4">
-            <Link to={'/register'} className="bg-[#00ff37] text-black font-semibold px-5 py-2 rounded hover:bg-green-400 transition">
+            <Link to={'/register'} className="bg-[#00ff37] text-black font-semibold px-5 py-2 rounded hover:bg-yellow-400 transition">
               Register
             </Link >
             <Link to={'/register'} className="bg-[#2b2e38] text-white font-semibold px-5 py-2 rounded hover:bg-[#3a3d47] transition">
