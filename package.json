@@ -24,7 +24,7 @@
     "country-list": "^2.3.0",
     "date-fns": "^4.1.0",
     "formik": "^2.4.6",
-    "framer-motion": "^12.23.0",
+    "framer-motion": "^12.23.6",
     "lucide-react": "^0.523.0",
     "plotly.js": "^3.0.1",
     "react": "^19.1.0",
@@ -37,7 +37,9 @@
     "react-plotly.js": "^2.6.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.3",
+    "react-slick": "^0.30.3",
     "react-toastify": "^11.0.5",
+    "slick-carousel": "^1.8.1",
     "tailwind-scrollbar": "^4.0.2",
     "world-countries": "^5.1.0",
     "yup": "^1.6.1"

@@ -18,6 +18,10 @@ import PageNotFound from "./pages/PageNotFound";
 import PublicRoute from "./components/routes/PublicRoute";
 import ProtectedRoute from "./components/routes/ProtectedRoute";
 import Dashboard from "./pages/Dashboard";
+import OrderExecution from "./pages/OrderExecution";
+import { AboutUs } from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import DepositWithdrawal from "./pages/DepositWithdrawal";
 
 // Title Map
 const titleMap = {
@@ -32,6 +36,13 @@ const titleMap = {
   "/VerifyResetPassword": "Verify Reset Password | EquitrustMarkets",
   "/ChangePassword": "Change Password | EquitrustMarkets",
   "/passwordReset": "Password Reset | EquitrustMarkets",
+  "/order-execution": "Order Execution | EquitrustMarkets",
+  "/about-us": "About Us | EquitrustMarkets",
+  "/contact-us": "Contact Us | EquitrustMarkets",
+  "/deposit-withdrawal": "Deposit & Withdrawal | EquitrustMarkets",
+  "/dashboard": "Dashboard | EquitrustMarkets",
+  "*": "Page Not Found | EquitrustMarkets",
+
 };
 
 // Title Updater Component
@@ -60,6 +71,10 @@ const App = () => {
         <Route path="/ValidateEmail" element={<PublicRoute><ValidateEmail /></PublicRoute>} />
         <Route path="/VerifyResetPassword" element={<PublicRoute><VerifyResetPassword /></PublicRoute>} />
         <Route path="/ChangePassword" element={<PublicRoute><ChangePassword /></PublicRoute>} />
+        <Route path="/order-execution" element={<PublicRoute><OrderExecution /></PublicRoute>} />
+        <Route path="/about-us" element={<PublicRoute><AboutUs /></PublicRoute>} />
+        <Route path="/contact-us" element={<PublicRoute><ContactUs /></PublicRoute>} />
+        <Route path="/deposit-withdrawal" element={<PublicRoute><DepositWithdrawal /></PublicRoute>} />
 
         {/* Protected Routes */}
         <Route path="/passwordReset" element={<ProtectedRoute><ResetPassword /></ProtectedRoute>} />
