@@ -60,6 +60,33 @@ const RegisterSection = () => {
     },
   });
 
+  const handleSubmitCheck = async (e) => {
+    e.preventDefault();
+    const errors = await formik.validateForm();
+    const values = formik.values;
+
+    const allFieldsFilled =
+      values.username &&
+      values.firstName &&
+      values.last_Name &&
+      values.email &&
+      values.password &&
+      values.confirmPassword;
+
+    const phoneEmpty = !values.phone;
+
+    if (Object.keys(errors).length > 0) {
+      if (allFieldsFilled && phoneEmpty) {
+        toast.error("Please fill in the country field properly By clicking to select country");
+      } else {
+        toast.error("Please fill all fields correctly");
+      }
+      return;
+    }
+
+    formik.handleSubmit();
+  };
+
   const handleCountrySelect = (country) => {
     setSelectedCountry(country);
     setCountryInput(country.name);
@@ -109,7 +136,7 @@ const RegisterSection = () => {
             ))}
           </div>
 
-          <form onSubmit={formik.handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmitCheck} className="space-y-6">
             {step === 1 && (
               <div className="space-y-4 animate-fade-in">
                 {['username', 'firstName', 'last_Name'].map((field) => (
