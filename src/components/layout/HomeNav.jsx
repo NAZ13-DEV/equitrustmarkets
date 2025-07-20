@@ -8,7 +8,6 @@ const navLinks = [
     label: 'Markets',
     dropdown: [
       { name: 'Forex Pairs', path: '/markets/forex' },
-      { name: 'Indices', path: '/markets/indices' },
       { name: 'Commodities', path: '/markets/commodities' },
       { name: 'Crypto CFDs', path: '/markets/crypto' },
     ],
@@ -23,11 +22,11 @@ const navLinks = [
     ],
   },
   {
-    label: 'Brokers',
+    label: 'Trading',
     dropdown: [
-      { name: 'Top Brokers', path: '/brokers/top' },
-      { name: 'Compare', path: '/brokers/compare' },
-      { name: 'Reviews', path: '/brokers/reviews' },
+      { name: 'Standard Account ', path: '/standard-accounts' },
+      { name: 'Professional Account', path: '/professional-accounts' },
+      { name: 'Demo Account', path: '/demo-accounts' },
     ],
   },
   {

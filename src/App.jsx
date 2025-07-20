@@ -22,6 +22,10 @@ import OrderExecution from "./pages/OrderExecution";
 import { AboutUs } from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import DepositWithdrawal from "./pages/DepositWithdrawal";
+import StandardAccount from "./pages/StandardAccount";
+import ProfessionalAccount from "./pages/ProfessionalAccount";
+import DemoAccount from "./pages/DemoAccount";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 // Title Map
 const titleMap = {
@@ -41,6 +45,9 @@ const titleMap = {
   "/contact-us": "Contact Us | EquitrustMarkets",
   "/deposit-withdrawal": "Deposit & Withdrawal | EquitrustMarkets",
   "/dashboard": "Dashboard | EquitrustMarkets",
+  "/standard-accounts": "Standard Accounts | EquitrustMarkets",
+  "/professional-accounts": "Professional Accounts | EquitrustMarkets",
+  "/demo-accounts": "Demo Accounts | EquitrustMarkets",
   "*": "Page Not Found | EquitrustMarkets",
 
 };
@@ -59,6 +66,7 @@ const App = () => {
   return (
     <Router>
       <TitleUpdater />
+      <ScrollToTop/>
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<PublicRoute><Home /></PublicRoute>} />
@@ -75,6 +83,10 @@ const App = () => {
         <Route path="/about-us" element={<PublicRoute><AboutUs /></PublicRoute>} />
         <Route path="/contact-us" element={<PublicRoute><ContactUs /></PublicRoute>} />
         <Route path="/deposit-withdrawal" element={<PublicRoute><DepositWithdrawal /></PublicRoute>} />
+        <Route path="/standard-accounts" element={<PublicRoute><StandardAccount /></PublicRoute>} />
+        <Route path="/professional-accounts" element={<PublicRoute><ProfessionalAccount /></PublicRoute>} />
+        <Route path="/demo-accounts" element={<PublicRoute><DemoAccount /></PublicRoute>} />
+
 
         {/* Protected Routes */}
         <Route path="/passwordReset" element={<ProtectedRoute><ResetPassword /></ProtectedRoute>} />
