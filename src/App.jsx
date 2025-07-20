@@ -28,6 +28,10 @@ import DemoAccount from "./pages/DemoAccount";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import ForexPair from "./pages/ForexPair";
 import Crypto from "./pages/Crypto";
+import Stock from "./pages/Stock";
+import Calculator from "./pages/Calculator";
+import Tools from "./pages/Tools";
+import CurrencyConverter from "./pages/CurrencyConverter";
 
 // Title Map
 const titleMap = {
@@ -50,8 +54,13 @@ const titleMap = {
   "/standard-accounts": "Standard Accounts | EquitrustMarkets",
   "/professional-accounts": "Professional Accounts | EquitrustMarkets",
   "/demo-accounts": "Demo Accounts | EquitrustMarkets",
-  "/forex-pairs": "Forex Pairs | EquitrustMarkets",
+  "/forex-pairs": "Forex CFD | EquitrustMarkets",
   "/crypto": "Crypto CFD | EquitrustMarkets",
+  "/stock": "Stock CFD | EquitrustMarkets",
+  "/calculator": "Calculator | EquitrustMarkets",
+  "/tools": "Tools | EquitrustMarkets",
+  "/currency-converter": "Currency Converter | EquitrustMarkets",
+
 
   "*": "Page Not Found | EquitrustMarkets",
 
@@ -93,6 +102,11 @@ const App = () => {
         <Route path="/demo-accounts" element={<PublicRoute><DemoAccount /></PublicRoute>} />
         <Route path="/forex-pairs" element={<PublicRoute><ForexPair /></PublicRoute>} />
         <Route path="/crypto" element={<PublicRoute><Crypto /></PublicRoute>} />
+        <Route path="/stock" element={<PublicRoute><Stock /></PublicRoute>} />
+        <Route path="/calculator" element={<PublicRoute><Calculator /></PublicRoute>} />
+        <Route path="/tools" element={<PublicRoute><Tools /></PublicRoute>} />
+        <Route path="/currency-converter" element={<PublicRoute><CurrencyConverter /></PublicRoute>} />
+
 
 
         {/* Protected Routes */}

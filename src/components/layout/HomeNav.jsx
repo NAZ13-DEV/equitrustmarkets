@@ -7,18 +7,17 @@ const navLinks = [
   {
     label: 'Markets',
     dropdown: [
-      { name: 'Forex Pairs', path: '/forex-pairs' },
-      { name: 'Commodities', path: '/markets/commodities' },
-      { name: 'Crypto CFDs', path: '/crypto' },
+      { name: 'Forex CFD', path: '/forex-pairs' },
+      { name: 'Stock CFD', path: '/stock' },
+      { name: 'Crypto CFD', path: '/crypto' },
     ],
   },
   {
     label: 'Analysis',
     dropdown: [
-      { name: 'Technical', path: '/analysis/technical' },
-      { name: 'Fundamental', path: '/analysis/fundamental' },
-      { name: 'News', path: '/analysis/news' },
-      { name: 'Calendar', path: '/analysis/calendar' },
+      { name: 'Tools', path: '/tools' },
+      { name: 'Currency Converter', path: '/currency-converter' },
+      { name: 'Calculator', path: '/calculator' },
     ],
   },
   {
@@ -155,10 +154,10 @@ export default function HomeNav() {
       {/* Mobile / Tablet Navbar */}
       <nav className="lg:hidden w-full bg-white shadow-md px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link to={'/'} className="flex items-center gap-2">
             <img src={Logo} alt="Logo" className="w-8 h-8" />
             <span className="text-xl font-bold text-gray-800">EquitrustMarkets</span>
-          </div>
+          </Link>
           <button
             onClick={() => setSidebarOpen(true)}
             className="p-2 rounded-md bg-green-100 text-green-700"

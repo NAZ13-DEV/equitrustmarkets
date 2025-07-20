@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../img/stader-icon.svg';
+
 
 const icons = {
   Twitter: (
@@ -24,10 +26,51 @@ const icons = {
   ),
 };
 
+const navLinks = [
+  {
+    label: 'Markets',
+    dropdown: [
+      { name: 'Forex CFD', path: '/forex-pairs' },
+      { name: 'Stock CFD', path: '/stock' },
+      { name: 'Crypto CFD', path: '/crypto' },
+    ],
+  },
+  {
+    label: 'Analysis',
+    dropdown: [
+      { name: 'Tools', path: '/tools' },
+      { name: 'Currency Converter', path: '/currency-converter' },
+      { name: 'Calculator', path: '/calculator' },
+    ],
+  },
+  {
+    label: 'Trading',
+    dropdown: [
+      { name: 'Standard Account', path: '/standard-accounts' },
+      { name: 'Professional Account', path: '/professional-accounts' },
+      { name: 'Demo Account', path: '/demo-accounts' },
+    ],
+  },
+  {
+    label: 'Education',
+    dropdown: [
+      { name: 'Deposit & Withdrawals', path: '/deposit-withdrawal' },
+      { name: 'Order Execution', path: '/order-execution' },
+    ],
+  },
+  {
+    label: 'About',
+    dropdown: [
+      { name: 'About Us', path: '/about-us' },
+      { name: 'Contact', path: '/contact-us' },
+    ],
+  },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-[#0B1D1E] text-white py-12 px-4">
-      <div className="grid grid-cols-1 gap-8 mx-auto max-w-7xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <div className="grid grid-cols-1 gap-8 mx-auto max-w-7xl sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
         <div className="flex flex-col items-start gap-4">
           <img src={Logo} alt="Logo" className="w-8 h-8" />
           <div className="flex items-center gap-3 mt-2">
@@ -42,62 +85,25 @@ const Footer = () => {
           </div>
         </div>
 
-        <div>
-          <h4 className="mb-3 text-sm font-bold">Networks</h4>
-          <ul className="space-y-2 text-sm text-gray-300">
-            <li>Ethereum</li>
-            <li>Hedera</li>
-            <li>Polygon</li>
-            <li>BNB</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="mb-3 text-sm font-bold">Governance</h4>
-          <ul className="space-y-2 text-sm text-gray-300">
-            <li className="flex items-center gap-2">
-              SD Utility Pool
-              <span className="text-[10px] font-bold bg-white text-black rounded px-1 py-[2px]">NEW</span>
-            </li>
-            <li>Community Forum</li>
-            <li>Snapshot</li>
-            <li>SD DeFi</li>
-            <li>SD Details</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="mb-3 text-sm font-bold">Analytics</h4>
-          <ul className="space-y-2 text-sm text-gray-300">
-            <li>Dune Analytics</li>
-          </ul>
-        </div>
-
-        <div className="flex flex-col gap-8">
-          <div>
-            <h4 className="mb-3 text-sm font-bold">Developers</h4>
+        {navLinks.map((section) => (
+          <div key={section.label}>
+            <h4 className="mb-3 text-sm font-bold">{section.label}</h4>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li>Github</li>
-              <li>ETHx Litepaper</li>
-              <li>Docs</li>
+              {section.dropdown.map((item) => (
+                <li key={item.name}>
+                  <Link to={item.path} className="hover:underline">{item.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
-          <div>
-            <h4 className="mb-3 text-sm font-bold">About</h4>
-            <ul className="space-y-2 text-sm text-gray-300">
-              <li>About Equitrustmarkets</li>
-              <li>Blogs</li>
-              <li>Download Press Kit</li>
-            </ul>
-          </div>
-        </div>
+        ))}
       </div>
 
       <div className="flex flex-col items-center justify-between px-4 mt-12 text-xs text-gray-400 md:flex-row">
         <p>© Copyright 2025 Equitrustmarkets. All rights reserved.</p>
         <div className="flex gap-4 mt-2 md:mt-0">
-          <a href="#" className="hover:underline">Terms of service</a>
-          <a href="#" className="hover:underline">Privacy policy</a>
+          <Link to="/terms" className="hover:underline">Terms of service</Link>
+          <Link to="/privacy" className="hover:underline">Privacy policy</Link>
         </div>
       </div>
     </footer>
