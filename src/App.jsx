@@ -26,6 +26,7 @@ import StandardAccount from "./pages/StandardAccount";
 import ProfessionalAccount from "./pages/ProfessionalAccount";
 import DemoAccount from "./pages/DemoAccount";
 import ScrollToTop from "./components/layout/ScrollToTop";
+import ForexPair from "./pages/ForexPair";
 
 // Title Map
 const titleMap = {
@@ -48,6 +49,7 @@ const titleMap = {
   "/standard-accounts": "Standard Accounts | EquitrustMarkets",
   "/professional-accounts": "Professional Accounts | EquitrustMarkets",
   "/demo-accounts": "Demo Accounts | EquitrustMarkets",
+  "/forex-pairs": "Forex Pairs | EquitrustMarkets",
   "*": "Page Not Found | EquitrustMarkets",
 
 };
@@ -86,6 +88,7 @@ const App = () => {
         <Route path="/standard-accounts" element={<PublicRoute><StandardAccount /></PublicRoute>} />
         <Route path="/professional-accounts" element={<PublicRoute><ProfessionalAccount /></PublicRoute>} />
         <Route path="/demo-accounts" element={<PublicRoute><DemoAccount /></PublicRoute>} />
+        <Route path="/forex-pairs" element={<PublicRoute><ForexPair /></PublicRoute>} />
 
 
         {/* Protected Routes */}
