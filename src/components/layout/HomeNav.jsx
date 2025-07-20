@@ -9,7 +9,7 @@ const navLinks = [
     dropdown: [
       { name: 'Forex Pairs', path: '/forex-pairs' },
       { name: 'Commodities', path: '/markets/commodities' },
-      { name: 'Crypto CFDs', path: '/markets/crypto' },
+      { name: 'Crypto CFDs', path: '/crypto' },
     ],
   },
   {
