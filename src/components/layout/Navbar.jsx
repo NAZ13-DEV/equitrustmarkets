@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, MoreVertical } from 'lucide-react';
-import staderLogo from '../../img/stader-icon.svg';
+import staderLogo from '../../img/stader-icon.png';
 
 const Navbar = ({ toggleSidebar }) => {
   return (
@@ -16,7 +16,7 @@ const Navbar = ({ toggleSidebar }) => {
         <img
           src={staderLogo}
           alt="Stader Logo"
-          className="hidden w-5 sm:w-6 md:w-6 sm:block lg:hidden"
+          className="hidden w-5   sm:block lg:hidden"
         />
       </div>
 

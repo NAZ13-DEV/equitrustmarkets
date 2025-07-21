@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import Logo from '../../img/stader-icon.svg';
+import Logo from '../../img/stader-icon.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const navLinks = [
@@ -88,8 +88,8 @@ export default function HomeNav() {
       <nav className="hidden lg:flex justify-between items-center px-6 py-4 bg-white shadow-sm w-full">
         <div className="flex items-center gap-10">
           <Link to="/" className="flex items-center gap-2">
-            <img src={Logo} alt="Logo" className="w-8 h-8" />
-            <span className="text-2xl font-bold text-gray-800">EquitrustMarkets</span>
+            <img src={Logo} alt="Logo" className="" />
+            {/* <span className="text-2xl font-bold text-gray-800">EquitrustMarkets</span> */}
           </Link>
           <div className="flex gap-6">
             {navLinks.map((link, idx) => (
@@ -155,8 +155,8 @@ export default function HomeNav() {
       <nav className="lg:hidden w-full bg-white shadow-md px-4 py-3">
         <div className="flex items-center justify-between">
           <Link to={'/'} className="flex items-center gap-2">
-            <img src={Logo} alt="Logo" className="w-8 h-8" />
-            <span className="text-xl font-bold text-gray-800">EquitrustMarkets</span>
+            <img src={Logo} alt="Logo" className="" />
+            {/* <span className="text-xl font-bold text-gray-800">EquitrustMarkets</span> */}
           </Link>
           <button
             onClick={() => setSidebarOpen(true)}
@@ -171,8 +171,8 @@ export default function HomeNav() {
             <div className="bg-[#142528] text-white w-4/5 sm:w-2/3 md:w-1/3 p-6 overflow-y-auto animate-slide-in">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
-                  <img src={Logo} alt="Logo" className="w-8 h-8" />
-                  <span className="text-lg font-bold">EquitrustMarkets</span>
+                  <img src={Logo} alt="Logo" className="" />
+                  {/* <span className="text-lg font-bold">EquitrustMarkets</span> */}
                 </div>
                 <button onClick={() => setSidebarOpen(false)} className="text-white">
                   <X className="w-6 h-6" />
