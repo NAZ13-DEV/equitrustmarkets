@@ -279,7 +279,7 @@ const DashboardRender = () => {
               <div className="absolute right-0 z-50 mt-2 w-[85vw] max-w-sm sm:w-56 bg-[#0a0f1f] text-black border border-gray-200 rounded-lg shadow-xl">
                 <div className="px-3 py-3 text-white border-b border-gray-200 sm:px-4">
                   <p className="text-xs text-white">Welcome</p>
-                  <p className="text-xs font-semibold truncate sm:text-sm ">
+                  <p className="text-xs font-semibold text-white truncate sm:text-sm ">
                     {user?.firstName} {user?.last_Name}
                   </p>
                 </div>
