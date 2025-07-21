@@ -82,18 +82,18 @@ const UploadProof = ({ isLoading, setIsLoading, plan }) => {
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
       `}</style>
-      <div className="col-span-12 px-2 sm:px-4 py-6 bg-[#e6f8ef] rounded-xl max-w-2xl mx-auto animate-fade-in">
+      <div className="col-span-12 px-2 sm:px-4 py-6 bg-[#0a0f1f] rounded-xl max-w-2xl mx-auto animate-fade-in">
         <Toaster position="top-center" />
         <form onSubmit={handleUpload}>
           <div className="flex flex-col gap-6">
-            <h5 className="text-lg sm:text-xl font-bold text-[#142528] text-center animate-fade-in">
+            <h5 className="text-lg sm:text-xl font-bold text-[#fff] text-center animate-fade-in">
               Upload Proof of Plan Subscription
             </h5>
 
             <input
               type="file"
               onChange={handleFileChange}
-              className="w-full px-4 py-2 text-[#3f6870] bg-[#e6f8ef] border border-[#3f6870]/50 rounded-md focus:outline-none focus:ring-2 focus:ring-[#07A658] transition-all duration-300 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:bg-[#07A658] file:text-white file:rounded-md file:hover:bg-[#07A658]/80 file:animate-pulse-hover animate-fade-in delay-100"
+              className="w-full px-4 py-2 text-[#fff] bg-[#0a0f1f] border border-[#045e18] rounded-md focus:outline-none focus:ring-2 focus:ring-[#07A658] transition-all duration-300 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:bg-[#07A658] file:text-white file:rounded-md file:hover:bg-[#07A658]/80 file:animate-pulse-hover animate-fade-in delay-100"
             />
 
             <button

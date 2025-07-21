@@ -3,7 +3,7 @@ import DashboardRender from '../components/Dashboard/DashboardRender'
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className='bg-[#0a0f1f]'>
       <DashboardRender/>
     </div>
   )

@@ -44,7 +44,7 @@ const Subscribe = () => {
 
   if (showError) {
     return (
-      <div className="min-h-screen bg-[#e6f8ef] flex items-center justify-center p-4">
+      <div className="min-h-screen bg-[#0a0f1f] flex items-center justify-center p-4">
         <p className="text-[#3f6870] text-lg">{showError}</p>
       </div>
     );
@@ -52,10 +52,10 @@ const Subscribe = () => {
 
   if (selectedPlan) {
     return (
-      <div className="min-h-screen bg-[#e6f8ef] p-4 lg:p-10 animate-fade-in">
+      <div className="min-h-screen bg-[#0a0f1f] p-4 lg:p-10 animate-fade-in">
         <button
           onClick={resetPlan}
-          className="mb-4 px-4 py-2 text-[#3f6870] text-sm font-medium rounded-md hover:bg-[#07A658]/20"
+          className="mb-4 px-4 py-2 text-[#fff] text-sm font-medium rounded-md bg-green-600 hover:bg-[#07A658]/50"
         >
           Back to Plans
         </button>
@@ -126,18 +126,18 @@ const Subscribe = () => {
           transform: scale(1.05);
         }
       `}</style>
-      <div className="min-h-screen bg-[#e6f8ef] p-4 lg:p-10">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="min-h-screen bg-[#0a0f1f] p-4 lg:p-10 ">
+        <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-2 lg:grid-cols-4 rounded-2xl">
           {plans.map((item, index) => (
             <div
               key={index}
-              className={`bg-[#e6f8ef] rounded-2xl shadow-lg p-6 text-center transition-transform hover:-translate-y-1 hover:shadow-2xl animate-fade-in delay-${index * 100}ms ${
+              className={`bg-[#0a0f1f] rounded-2xl shadow-lg p-6 text-center transition-transform hover:-translate-y-1 hover:shadow-2xl border border-green-400 animate-fade-in delay-${index * 100}ms ${
                 preSelectedPlan?.plan === item.plan ? "animate-glow border-2 border-[#07A658]" : ""
               }`}
             >
-              <h2 className="mb-2 text-xl font-bold text-[#142528]">{item.name}</h2>
-              <p className="mb-4 text-lg font-semibold text-[#3f6870]">{item.range}</p>
-              <ul className="mb-6 space-y-2 text-sm text-[#3f6870]">
+              <h2 className="mb-2 text-xl font-bold text-[#fff]">{item.name}</h2>
+              <p className="mb-4 text-lg font-semibold text-[#fff]">{item.range}</p>
+              <ul className="mb-6 space-y-2 text-sm text-[#fff]">
                 {item.features.map((feature, idx) => (
                   <li key={idx}>• {feature}</li>
                 ))}
@@ -162,7 +162,7 @@ const Subscribe = () => {
             </button>
             <button
               onClick={() => setPreSelectedPlan(null)}
-              className="ml-4 px-6 py-2 font-medium text-[#3f6870] rounded-md hover:bg-[#07A658]/20"
+              className="ml-4 px-6 py-2 font-medium text-[#fff] rounded-md hover:bg-[#07A658]/20"
             >
               Cancel
             </button>

@@ -44,8 +44,8 @@ const DepositPage = () => {
   }, [method]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#e6f8ef]">
-      <div className="w-full py-4 bg-[#ffffff] rounded-xl shadow-md border border-[#07A658] forex-form-theme md:w-11/12 lg:w-2/3 xl:w-1/2 xl:p-7">
+    <div className="min-h-screen flex items-center justify-center bg-[#0a0f1f]">
+      <div className="w-full py-4 bg-[#0a0f1f] rounded-xl shadow-md border border-[#07A658] forex-form-theme md:w-11/12 lg:w-2/3 xl:w-1/2 xl:p-7">
         <div className="grid grid-cols-1 gap-6 mt-3 md:grid-cols-2">
           {currentState === 'FundNow' && (
             <FundNow

@@ -49,7 +49,7 @@ const DashboardPage = () => {
     user ? `${user.currency}${(+value).toFixed(2)}` : "Loading...";
 
   return (
-    <div className="min-h-screen bg-[#e6f8ef] p-4 sm:p-6 md:p-8 text-[#3f6870]">
+    <div className="min-h-screen bg-[#0a0f1f] p-4 sm:p-6 md:p-8 text-[#3f6870]">
       {/* Summary Cards */}
       <section className="grid grid-cols-1 gap-6 mb-10 sm:grid-cols-2 lg:grid-cols-3">
         <SummaryCard title="Deposit" value={formatCurrency(user?.total_depo)} />
@@ -59,7 +59,7 @@ const DashboardPage = () => {
 
       {/* TradingView Widgets */}
       <section className="grid grid-cols-1 gap-6 mb-12 xl:grid-cols-12">
-        <div className="overflow-hidden bg-white border border-green-100 shadow-md xl:col-span-9 rounded-xl">
+        <div className="overflow-hidden bg-[#0a0f1f]border border-green-100 shadow-md xl:col-span-9 rounded-xl">
           <iframe
             src="https://s.tradingview.com/widgetembed/?symbol=NASDAQ:AAPL&interval=D&hidesidetoolbar=1&hidetoptoolbar=1&theme=dark&style=1&locale=en"
             width="100%"
@@ -69,7 +69,7 @@ const DashboardPage = () => {
             title="TradingView Chart"
           />
         </div>
-        <div className="overflow-hidden bg-white border border-green-100 shadow-md xl:col-span-3 rounded-xl">
+        <div className="overflow-hidden bg-[#0a0f1f] border border-green-100 shadow-md xl:col-span-3 rounded-xl">
           <iframe
             frameBorder="0"
             src="https://www.tradingview-widget.com/embed-widget/screener/?locale=en#%7B%22width%22%3A%22220%22%2C%22height%22%3A600%2C%22market%22%3A%22forex%22%2C%22colorTheme%22%3A%22dark%22%7D"
@@ -80,7 +80,7 @@ const DashboardPage = () => {
       </section>
 
       {/* Coin Trade Section */}
-      <section className="p-6 mb-12 bg-white border border-green-100 shadow-md rounded-xl">
+      <section className="p-6 mb-12 bg-[#0a0f1f] border border-green-100 shadow-md rounded-xl">
         <Coin
           formFields={formFields}
           sellForm={sellForm}
@@ -94,7 +94,7 @@ const DashboardPage = () => {
       </section>
 
       {/* Order History */}
-      <section className="p-6 bg-white border border-green-100 shadow-md rounded-xl">
+      <section className="p-6 bg-[#0a0f1f] border border-green-100 shadow-md rounded-xl">
         <OrderHistory
           setFormFields={setFormFields}
           setSellForm={setSellForm}
@@ -109,9 +109,9 @@ const DashboardPage = () => {
 };
 
 const SummaryCard = ({ title, value }) => (
-  <div className="p-6 transition duration-300 bg-white border border-green-200 shadow rounded-xl hover:shadow-lg">
-    <span className="text-xs font-semibold uppercase text-[#07A658]">{title}</span>
-    <h4 className="mt-2 text-3xl font-bold text-[#142528]">{value}</h4>
+  <div className="p-6 transition duration-300 bg-[#0a0f1f] border border-green-200 shadow rounded-xl hover:shadow-lg">
+    <span className="text-xs font-semibold text-white uppercase">{title}</span>
+    <h4 className="mt-2 text-3xl font-bold text-white">{value}</h4>
   </div>
 );
 

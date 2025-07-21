@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import Logo from '../../img/stader-icon.png';
+import Logo1 from '../../img/fav.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const navLinks = [
@@ -85,7 +86,7 @@ export default function HomeNav() {
   return (
     <>
       {/* Desktop Navbar */}
-      <nav className="hidden lg:flex justify-between items-center px-6 py-4 bg-white shadow-sm w-full">
+      <nav className="items-center justify-between hidden w-full px-6 py-4 bg-white shadow-sm lg:flex">
         <div className="flex items-center gap-10">
           <Link to="/" className="flex items-center gap-2">
             <img src={Logo} alt="Logo" className="" />
@@ -104,7 +105,7 @@ export default function HomeNav() {
                   />
                 </button>
                 {openDropdown === idx && (
-                  <div className="absolute left-0 top-full mt-2 border-1 bg-white  shadow-lg border-green-600 rounded-md z-20 px-4">
+                  <div className="absolute left-0 z-20 px-4 mt-2 bg-white border-green-600 rounded-md shadow-lg top-full border-1">
                     {link.dropdown.map((item) => (
                       <button
                         key={item.name}
@@ -121,7 +122,7 @@ export default function HomeNav() {
           </div>
           <div className="flex items-center gap-4 ml-6">
             {socials.map((s) => (
-              <div key={s.name} className="p-3 rounded-full bg-green-100">
+              <div key={s.name} className="p-3 bg-green-100 rounded-full">
                 <svg
                   className="w-5 h-5 text-gray-800"
                   fill="none"
@@ -152,7 +153,7 @@ export default function HomeNav() {
       </nav>
 
       {/* Mobile / Tablet Navbar */}
-      <nav className="lg:hidden w-full bg-white shadow-md px-4 py-3">
+      <nav className="w-full px-4 py-3 bg-white shadow-md lg:hidden">
         <div className="flex items-center justify-between">
           <Link to={'/'} className="flex items-center gap-2">
             <img src={Logo} alt="Logo" className="" />
@@ -160,19 +161,19 @@ export default function HomeNav() {
           </Link>
           <button
             onClick={() => setSidebarOpen(true)}
-            className="p-2 rounded-md bg-green-100 text-green-700"
+            className="p-2 text-green-700 bg-green-100 rounded-md"
           >
             <Menu className="w-6 h-6" />
           </button>
         </div>
 
         {sidebarOpen && (
-          <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex">
+          <div className="fixed inset-0 z-50 flex bg-black bg-opacity-50">
             <div className="bg-[#142528] text-white w-4/5 sm:w-2/3 md:w-1/3 p-6 overflow-y-auto animate-slide-in">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
-                  <img src={Logo} alt="Logo" className="" />
-                  {/* <span className="text-lg font-bold">EquitrustMarkets</span> */}
+                  <img src={Logo1} alt="Logo" className="w-8" />
+                  <span className="text-lg font-bold">EquitrustMarkets</span>
                 </div>
                 <button onClick={() => setSidebarOpen(false)} className="text-white">
                   <X className="w-6 h-6" />
@@ -183,19 +184,19 @@ export default function HomeNav() {
                 {navLinks.map((link, idx) => (
                   <div key={link.label}>
                     <button
-                      className="flex items-center justify-between w-full text-left py-2 px-2 font-semibold hover:text-green-400"
+                      className="flex items-center justify-between w-full px-2 py-2 font-semibold text-left hover:text-green-400"
                       onClick={() => toggleDropdown(idx)}
                     >
                       <span>{link.label}</span>
                       <ChevronDown className={`w-4 h-4 transition-transform ${openDropdown === idx ? 'rotate-180' : ''}`} />
                     </button>
                     {openDropdown === idx && (
-                      <div className="mt-1 ml-4 border-l border-green-700 pl-4">
+                      <div className="pl-4 mt-1 ml-4 border-l border-green-700">
                         {link.dropdown.map((item) => (
                           <button
                             key={item.name}
                             onClick={() => handleLinkClick(item.path)}
-                            className="block py-1 text-left text-sm text-gray-200 hover:text-green-400"
+                            className="block py-1 text-sm text-left text-gray-200 hover:text-green-400"
                           >
                             {item.name}
                           </button>
@@ -204,16 +205,16 @@ export default function HomeNav() {
                     )}
                   </div>
                 ))}
-                <div className="mt-6 flex flex-col gap-2">
+                <div className="flex flex-col gap-2 mt-6">
                   <button
                     onClick={() => handleLinkClick('/register')}
-                    className="bg-green-600 hover:bg-green-700 text-white py-2 rounded text-center font-bold"
+                    className="py-2 font-bold text-center text-white bg-green-600 rounded hover:bg-green-700"
                   >
                     Register
                   </button>
                   <button
                     onClick={() => handleLinkClick('/login')}
-                    className="border border-green-600 text-green-400 hover:bg-green-800 py-2 rounded text-center font-bold"
+                    className="py-2 font-bold text-center text-green-400 border border-green-600 rounded hover:bg-green-800"
                   >
                     Login
                   </button>

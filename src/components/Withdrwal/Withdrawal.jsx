@@ -136,13 +136,13 @@ const Withdrawal = () => {
   };
 
   return (
-   <div className="bg-[#e6f8ef] flex items-center justify-center p-4 min-h-screen">
+   <div className="bg-[#0a0f1f] flex items-center justify-center p-4 min-h-screen">
   <Toaster position="top-center" />
   <form
     onSubmit={handleSubmit}
-    className="w-full max-w-3xl bg-white rounded-xl p-6 lg:p-10 shadow-lg border border-[#07A658]"
+    className="w-full max-w-3xl bg-[#0a0f1f] rounded-xl p-6 lg:p-10 shadow-lg border border-[#07A658]"
   >
-    <h2 className="text-2xl text-[#142528] font-bold text-center mb-6">
+    <h2 className="text-2xl text-[#fff] font-bold text-center mb-6">
       Withdraw Funds
     </h2>
 
@@ -156,7 +156,7 @@ const Withdrawal = () => {
                   className={`px-4 py-2 rounded-md text-sm md:text-base font-semibold border-b-2 transition-all duration-200 ${
                     selected
                       ? "text-[#07A658] border-[#07A658]"
-                      : "text-[#3f6870] border-transparent hover:text-[#07A658]"
+                      : "text-[#fff] border-transparent hover:text-[#07A658]"
                   }`}
                   onClick={() =>
                     setWithdrawData({
@@ -179,7 +179,7 @@ const Withdrawal = () => {
           <Tab.Panel key={idx}>
             <div className="space-y-6">
               <div>
-                <label className="block mb-1 text-[#3f6870] font-semibold text-sm">
+                <label className="block mb-1 text-[#fff] font-semibold text-sm">
                   Destination Address
                 </label>
                 <input
@@ -188,11 +188,11 @@ const Withdrawal = () => {
                   placeholder="Enter Wallet Address"
                   value={withdrawData.address}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 rounded-md bg-[#e6f8ef] text-[#142528] border border-[#07A658] focus:ring-2 focus:ring-[#07A658]/50 outline-none"
+                  className="w-full px-3 py-2 rounded-md bg-[#0a0f1f] text-[#fff] border border-[#07A658] focus:ring-2 focus:ring-[#07A658]/50 outline-none"
                 />
               </div>
               <div>
-                <label className="block mb-1 text-[#3f6870] font-semibold text-sm">
+                <label className="block mb-1 text-[#fff] font-semibold text-sm">
                   Withdrawal Amount
                 </label>
                 <input
@@ -201,7 +201,7 @@ const Withdrawal = () => {
                   placeholder="Enter amount"
                   value={withdrawData.amount}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 rounded-md bg-[#e6f8ef] text-[#142528] border border-[#07A658] focus:ring-2 focus:ring-[#07A658]/50 outline-none"
+                  className="w-full px-3 py-2 rounded-md bg-[#0a0f1f] text-[#fff] border border-[#07A658] focus:ring-2 focus:ring-[#07A658]/50 outline-none"
                 />
               </div>
               <button
@@ -227,7 +227,7 @@ const Withdrawal = () => {
               { label: "Narration (Optional)", name: "narration" },
             ].map((field) => (
               <div key={field.name}>
-                <label className="block mb-1 text-[#3f6870] font-semibold text-sm">
+                <label className="block mb-1 text-[#fff] font-semibold text-sm">
                   {field.label}
                 </label>
                 <input
@@ -236,7 +236,7 @@ const Withdrawal = () => {
                   placeholder={field.label}
                   value={withdrawData[field.name]}
                   onChange={handleInputChange}
-                  className="w-full px-3 py-2 rounded-md bg-[#e6f8ef] text-[#142528] border border-[#07A658] focus:ring-2 focus:ring-[#07A658]/50 outline-none"
+                  className="w-full px-3 py-2 rounded-md bg-[#0a0f1f] text-[#fff] border border-[#07A658] focus:ring-2 focus:ring-[#07A658]/50 outline-none"
                 />
               </div>
             ))}

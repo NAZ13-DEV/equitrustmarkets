@@ -94,32 +94,32 @@ const FundNow = ({
   };
 
   return (
-    <div className="col-span-12 p-6 bg-white rounded-xl border border-[#07A658] shadow-lg xl:col-span-12">
+    <div className="col-span-12 p-6 bg-[#0a0f1f]  rounded-xl shadow-lg xl:col-span-12">
       <Toaster position="top-center" />
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col items-center justify-between gap-6">
           <div className="w-full h-auto">
-            <h5 className="text-lg text-[#142528] font-bold mb-4 text-center">
+            <h5 className="text-lg text-[#fff] font-bold mb-4 text-center">
               Fund Your Account
             </h5>
 
             <div className="mb-4">
-              <label className="block text-sm font-medium text-[#3f6870] mb-1">Amount</label>
+              <label className="block text-sm font-medium text-[#fff] mb-1">Amount</label>
               <input
                 type="text"
                 placeholder="Enter amount in USD"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-[#e6f8ef] text-[#142528] placeholder:text-[#3f6870] focus:outline-none focus:ring-2 focus:ring-[#07A658] transition"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-[#0a0f1f] text-[#fff] placeholder:text-[#fff] focus:outline-none focus:ring-2 focus:ring-[#07A658] transition"
               />
             </div>
 
             <div className="mb-6">
-              <label className="block text-sm font-medium text-[#3f6870] mb-1">Select Method</label>
+              <label className="block text-sm font-medium bg-[#0a0f1f] mb-1">Select Method</label>
               <select
                 value={method}
                 onChange={(e) => setMethod(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-[#e6f8ef] text-[#142528] focus:outline-none focus:ring-2 focus:ring-[#07A658] transition"
+                className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-[#0a0f1f] text-[#fff] focus:outline-none focus:ring-2 focus:ring-[#07A658] transition"
               >
                 <option value="bitcoin">Bitcoin</option>
                 <option value="ethereum">Ethereum Erc20</option>

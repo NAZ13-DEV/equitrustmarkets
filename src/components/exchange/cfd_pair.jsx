@@ -133,11 +133,11 @@ const [showModal, setShowModal] = useState(false);
   };
   return (
     <>
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#f5f1f1] bg-opacity-70">
-          <div className="bg-white text-[#3f6870] max-w-md w-full rounded-xl p-6 shadow-xl">
+       {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0a0f1f] bg-opacity-70">
+          <div className="bg-[#0a0f1f] text-[#fff] max-w-md w-full rounded-xl p-6 shadow-xl">
             <div className="flex items-start justify-between">
-              <h2 className="text-lg font-bold text-[#142528]">
+              <h2 className="text-lg font-bold text-[#fff]">
                 Trade Successful
               </h2>
             </div>

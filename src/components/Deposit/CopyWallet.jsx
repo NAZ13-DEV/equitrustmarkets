@@ -59,16 +59,16 @@ const CopyWallet = ({
   };
 
   return (
-    <div className="col-span-12 p-4 bg-white shadow-md rounded-xl lg:px-7 lg:py-6 xl:col-span-12 animate-fade-in-up">
+    <div className="col-span-12 p-4 bg-[#0a0f1f] shadow-md rounded-xl lg:px-7 lg:py-6 xl:col-span-12 animate-fade-in-up">
       <div className="flex flex-col gap-8">
         <div className="text-center">
-          <h5 className="text-base text-[#142528] font-bold mb-1">
+          <h5 className="text-base text-[#fff] font-bold mb-1">
             Preferred Deposit Amount: {currency} {amount ?? 0.0}
           </h5>
-          <p className="text-base text-[#3f6870]">
+          <p className="text-base text-[#fff]">
             Equals: {coinValue?.toFixed(4) ?? 0.0} {methodSign}
           </p>
-          <p className="mt-2 text-sm text-gray-500">
+          <p className="mt-2 text-sm bg-[#0a0f1f]">
             Send your payment to the address below:
           </p>
         </div>
@@ -86,7 +86,7 @@ const CopyWallet = ({
 
           {/* Wallet Info + QR */}
           <div className="flex-1 w-full max-w-xl">
-            <h1 className="text-lg font-semibold text-[#142528] sm:text-2xl mb-4">
+            <h1 className="text-lg font-semibold text-[#fff] sm:text-2xl mb-4">
               {method.toUpperCase()} ADDRESS
             </h1>
 
@@ -107,7 +107,7 @@ const CopyWallet = ({
             </div>
 
             <div className="mt-6 text-center animate-fade-in">
-              <h5 className="text-base font-bold mb-2 text-[#142528]">Scan to Copy Wallet</h5>
+              <h5 className="text-base font-bold mb-2 text-[#fff]">Scan to Copy Wallet</h5>
               <img
                 src={`https://quickchart.io/qr?text=${wallet}`}
                 alt="QR Code"

@@ -73,7 +73,7 @@ const FundNow = ({
           toast.success(
             `Deposit recorded. Pay ${currency}${numericAmount} ≈ ${cryptoAmount.toFixed(4)} ${method.toUpperCase()}`
           );
-          setTimeout(() => setCurrentState('CopyWallet'), 3000);
+          setTimeout(() => setCurrentState('CopyWallet'), 2000);
         }
       }
     } catch (error) {
@@ -115,20 +115,20 @@ const FundNow = ({
         <Toaster position="top-center" />
         <form onSubmit={handleSubmit} className="w-full px-2 mx-auto space-y-6 md:w-full sm:px-4">
           <div className="text-center">
-            <h5 className="text-xl sm:text-2xl font-semibold text-[#142528] animate-fade-in">Subscribe to a Plan</h5>
-            <p className="text-[#3f6870] text-sm sm:text-base mt-1 animate-fade-in delay-100">
+            <h5 className="text-xl sm:text-2xl font-semibold text-[#fff] animate-fade-in">Subscribe to a Plan</h5>
+            <p className="text-[#fff] text-sm sm:text-base mt-1 animate-fade-in delay-100">
               Selected Plan: <span className="font-bold">{plan}</span>
             </p>
           </div>
 
           <div className="delay-200 animate-fade-in">
-            <label className="block text-[#3f6870] text-sm font-medium mb-1">Enter Amount</label>
+            <label className="block text-[#fff] text-sm font-medium mb-1">Enter Amount</label>
             <input
               type="text"
               placeholder="Amount"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg bg-[#e6f8ef] border border-[#3f6870]/50 text-[#3f6870] placeholder-[#3f6870]/70 focus:outline-none focus:ring-2 focus:ring-[#07A658] transition-all duration-300"
+              className="w-full px-4 py-2 rounded-lg bbg-[#0a0f1f] border border-[#045e18]/50 text-[#fff] placeholder-[#fff]/70 focus:outline-none focus:ring-2 focus:ring-[#07A658] transition-all duration-300"
             />
           </div>
 
@@ -137,7 +137,7 @@ const FundNow = ({
             <select
               value={method}
               onChange={(e) => setMethod(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg bg-[#e6f8ef] border border-[#3f6870]/50 text-[#3f6870] focus:outline-none focus:ring-2 focus:ring-[#07A658] transition-all duration-300"
+              className="w-full px-4 py-2 rounded-lg bg-[#0a0f1f] border border-[#045e18]/50 text-[#fff] focus:outline-none focus:ring-2 focus:ring-[#07A658] transition-all duration-300"
             >
               <option value="">-- Select Method --</option>
               <option value="bitcoin">Bitcoin</option>
