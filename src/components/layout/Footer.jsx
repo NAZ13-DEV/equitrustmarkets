@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../img/stader-icon.svg';
+import Logo from '../../img/fav.png';
 
 
 const icons = {

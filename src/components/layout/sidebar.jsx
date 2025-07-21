@@ -1,6 +1,6 @@
 import React from 'react';
 import { Twitter, Send, Gamepad2, ChevronRight } from 'lucide-react';
-import logo from '../../img/stader-icon.svg';
+import logo from '../../img/fav.png';
 import sdLogo from '../../img/sd_light.svg';
 import { Link } from 'react-router-dom';
 

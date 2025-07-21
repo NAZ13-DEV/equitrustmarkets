@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { Mail } from "lucide-react";
 import { toast, Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import BigLogo from "../../img/stader-icon.svg";
+import BigLogo from "../../img/fav.png";
 import api from "../../redux/slices/api"; // Adjust path as needed
 
 const ForgotPasswordSection = () => {

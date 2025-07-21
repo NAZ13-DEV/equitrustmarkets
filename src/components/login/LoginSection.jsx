@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 import { Eye, EyeOff, Mail, Lock, Loader2 } from 'lucide-react';
 import WelcomeLoader from '../Dashboard/WelcomeLoader';
-import BigLogo from '../../img/stader-icon.svg';
+import BigLogo from '../../img/fav.png';
 import api from '../../redux/slices/api';
 
 const schema = yup.object().shape({

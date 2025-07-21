@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import api from "../../redux/slices/api";
-import logo from "../../img/stader-icon.svg";
+import logo from "../../img/fav.png";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 
 const PasswordReset = () => {

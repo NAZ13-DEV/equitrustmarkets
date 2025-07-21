@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import logo from "../../img/stader-icon.svg";
+import logo from "../../img/fav.png";
 import ProfileFallback from "../../../public/userProfile.svg";
 import MobileMenuDashboard from "./MobileMenuDashboard";
 import DashboardPage from "./DashboardPage";

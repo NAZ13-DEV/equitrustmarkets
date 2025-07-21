@@ -1,5 +1,5 @@
 import React from 'react';
-import BigLogo from '../../img/stader-icon.svg';
+import BigLogo from '../../img/fav.png';
 
 const WelcomeLoader = () => {
   return (

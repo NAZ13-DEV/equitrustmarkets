@@ -11,7 +11,7 @@ import {
   FaUserCog,
   FaCamera,
 } from "react-icons/fa";
-import BigLogo from "../../img/stader-icon.svg";
+import BigLogo from "../../img/fav.png";
 
 const MobileMenuDashboard = ({ onClose, scrollToSection }) => {
   const handleClick = (id) => {
