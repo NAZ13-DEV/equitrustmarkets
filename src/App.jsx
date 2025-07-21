@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 
 // Pages
 import Home from "./pages/Home";
@@ -78,7 +78,7 @@ const TitleUpdater = () => {
 
 const App = () => {
   return (
-    <Router>
+    <HashRouter>
       <TitleUpdater />
       <ScrollToTop/>
       <Routes>
@@ -117,7 +117,7 @@ const App = () => {
         {/* Fallback */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 };
 
