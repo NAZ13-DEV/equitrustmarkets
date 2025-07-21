@@ -106,14 +106,9 @@ const App = () => {
         <Route path="/calculator" element={<PublicRoute><Calculator /></PublicRoute>} />
         <Route path="/tools" element={<PublicRoute><Tools /></PublicRoute>} />
         <Route path="/currency-converter" element={<PublicRoute><CurrencyConverter /></PublicRoute>} />
-
-
-
         {/* Protected Routes */}
         <Route path="/passwordReset" element={<ProtectedRoute><ResetPassword /></ProtectedRoute>} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-
-
         {/* Fallback */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
