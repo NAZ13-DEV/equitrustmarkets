@@ -102,8 +102,8 @@ const SubscribeSoftware = () => {
         .delay-200 { animation-delay: 200ms; }
         .delay-300 { animation-delay: 300ms; }
       `}</style>
-      <div className="min-h-screen bg-[#e6f8ef] p-4 lg:p-10 animate-fade-in">
-        <div className="my-4 text-2xl sm:text-3xl font-bold text-center text-[#142528]">
+      <div className="min-h-screen bg-[#0a0f1f]p-4 lg:p-10 animate-fade-in">
+        <div className="my-4 text-2xl sm:text-3xl font-bold text-center text-[#fff]">
           SOFTWARE PACKAGES
         </div>
 
@@ -111,10 +111,10 @@ const SubscribeSoftware = () => {
           {softwares.map((item, index) => (
             <div
               key={index}
-              className="bg-[#e6f8ef] rounded-2xl shadow-lg p-6 text-center transition-transform hover:-translate-y-1 hover:shadow-2xl border border-[#3f6870]/50 animate-fade-in delay-100"
+              className="bg-[#0a0f1f] rounded-2xl shadow-lg p-6 text-center transition-transform hover:-translate-y-1 hover:shadow-2xl border border-[#3f6870]/50 animate-fade-in delay-100"
             >
-              <h2 className="mb-2 text-xl font-bold text-[#142528] uppercase">{item.name}</h2>
-              <p className="mb-4 text-lg font-semibold text-[#1c2020] animate-price-highlight">
+              <h2 className="mb-2 text-xl font-bold text-[#fff] uppercase">{item.name}</h2>
+              <p className="mb-4 text-lg font-semibold text-[#fff] animate-price-highlight">
                 ${item.amount.toLocaleString()}
               </p>
               <div className="mt-6">

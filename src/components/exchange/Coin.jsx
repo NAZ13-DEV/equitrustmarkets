@@ -57,13 +57,13 @@ const Coin = ({
   };
 
   return (
-    <div className="w-full col-span-12 p-4 sm:p-6 lg:p-8 rounded-2xl bg-[#e6f8ef] border border-green-200 shadow-xl transition-all duration-500 ease-in-out transform hover:scale-[1.01]">
+    <div className="w-full col-span-12 p-4 sm:p-6 lg:p-8 rounded-2xl bg-[#0a0f1f]  shadow-xl transition-all duration-500 ease-in-out transform hover:scale-[1.01]">
       <Tab.Group>
         <Tab.Panels className="mt-4">
           <Tab.Panel
             className="transition-all duration-500 ease-in-out animate-fade-in"
           >
-            <h5 className="text-center mb-6 text-base sm:text-lg font-semibold text-[#142528]">
+            <h5 className="mb-6 text-lg font-semibold text-center text-white sm:text-3xl">
               {activeOption === ''
                 ? 'Choose Trading Pairs'
                 : `Your Chosen Trading Pair: ${activeOption}`}
@@ -71,7 +71,7 @@ const Coin = ({
 
             <div className="relative mb-8">
               <select
-                className="w-full px-4 py-3 text-sm sm:text-base text-[#3f6870] bg-white border border-green-300 focus:ring-2 focus:ring-[#07A658] focus:outline-none rounded-md transition-all duration-300 ease-in-out"
+                className="w-full px-4 py-3 text-sm sm:text-base text-white bg-[#0a0f1f] border border-green-300 focus:ring-1 focus:ring-[#07A658] focus:outline-none rounded-md transition-all duration-300 ease-in-out "
                 name="trading"
                 id="marketOrderSelect"
                 value={activeOption}

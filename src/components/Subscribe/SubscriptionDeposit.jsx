@@ -87,11 +87,11 @@ const SubscriptionDeposit = ({ plan, min, max }) => {
           transition: transform 0.3s ease-in-out;
         }
       `}</style>
-      <div className="bg-[#e6f8ef] flex items-center justify-center px-2 sm:px-4 py-6 sm:py-10 min-h-screen animate-fade-in">
-        <div className="w-full max-w-4xl bg-[#e6f8ef] rounded-2xl shadow-lg p-4 sm:p-6 lg:p-10 transition-all duration-300 animate-card-pulse">
+      <div className="flex items-center justify-center sm:px-4 sm:py-10 animate-fade-in rounded-3xl">
+        <div className="w-full max-w-4xl bg-[#0a0f1f]] rounded-2xl shadow-lg p-4 sm:p-6 lg:p-10 transition-all duration-300 animate-card-pulse border border-green-400">
           <div className="mb-6 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#142528]">{plan} Plan</h2>
-            <p className="mt-1 text-sm sm:text-base text-[#3f6870]">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#fff]">{plan} Plan</h2>
+            <p className="mt-1 text-sm sm:text-base text-[#fff]">
               Min: ${min.toLocaleString()} — Max: ${max.toLocaleString()}
             </p>
           </div>

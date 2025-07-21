@@ -68,10 +68,10 @@ const OrderHistory = ({
   };
 
   const renderTable = (filtered) => (
-    <div className="overflow-x-auto rounded-xl border border-[#07A658]/10 bg-white shadow-md">
-      <table className="w-full text-sm text-[#3f6870]">
+    <div className="overflow-x-auto rounded-xl border border-[#07A658]/10 bg-[#0a0f1f] shadow-md">
+      <table className="w-full text-sm text-[#fff]">
         <thead>
-          <tr className="font-semibold border-b border-[#07A658]/20 bg-[#e6f8ef] text-[#142528]">
+          <tr className="font-semibold border-b border-[#07A658]/20 bg-[#0a0f1f]] text-[#fff]">
             {["SN", "Amount", "Symbol", "Trade Pair", "Trade Type", "Interval", "Leverage", "Trade ID", "Date", "Status", "Payout", "Action"].map((header) => (
               <th key={header} className="px-3 py-2 text-left">
                 {header}
@@ -82,7 +82,7 @@ const OrderHistory = ({
         <tbody>
           {filtered.map((data, i) => {
             const isBuy = data.tradeType?.toLowerCase() === "buy";
-            const rowColor = isBuy ? "hover:bg-green-50" : "hover:bg-red-50";
+            const rowColor = isBuy ? "hover:bg-green-400" : "hover:bg-red-500";
             return (
               <tr
                 key={data.id}
@@ -120,7 +120,7 @@ const OrderHistory = ({
                           ? "#28A745"
                           : data.status === "Loss"
                           ? "#DC3545"
-                          : "#999",
+                          : "#fefe",
                     }}
                   >
                     {data.status}
@@ -132,7 +132,7 @@ const OrderHistory = ({
                 <td className="px-3 py-2">
                   {data.status === "Pending" ? (
                     <button onClick={() => handleEdit(data)}>
-                      <span className="text-[#142528] transition material-symbols-outlined hover:text-[#07A658]">
+                      <span className="text-[#fff] transition material-symbols-outlined hover:text-[#07A658]">
                         edit
                       </span>
                     </button>
@@ -149,7 +149,7 @@ const OrderHistory = ({
   );
 
   return (
-    <section className="w-full p-4 mt-6 rounded-xl bg-[#e6f8ef] lg:px-7 lg:py-6 lg:mt-0 shadow-md border border-[#07A658]/10">
+    <section className="w-full p-4 mt-6 rounded-xl bg-[#0a0f1f] lg:px-7 lg:py-6 lg:mt-0 shadow-md ">
       <Tab.Group>
         <Tab.List className="flex flex-wrap gap-2 mb-4">
           {["Open orders", "Closed orders", "Order history"].map((tab) => (
@@ -159,7 +159,7 @@ const OrderHistory = ({
                   className={`text-sm md:text-base font-semibold px-3 py-2 rounded-md transition ${
                     selected
                       ? "bg-[#07A658] text-white shadow-md"
-                      : "text-[#3f6870] hover:text-[#07A658]"
+                      : "text-[#fff] hover:text-[#07A658]"
                   }`}
                 >
                   {tab}

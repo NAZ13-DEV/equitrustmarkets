@@ -78,38 +78,38 @@ export default function UploadProof() {
   if (showPending) return <KYCStatus />;
 
   return (
-    <div className="col-span-12 p-6 rounded-2xl bg-white shadow-md border border-[#07A658] transition-all duration-500 ease-in-out animate-fade-in xl:col-span-12 w-full">
+    <div className="col-span-12 p-6 rounded-2xl bg-[#0a0f1f] shadow-md border border-[#07A658] transition-all duration-500 ease-in-out animate-fade-in xl:col-span-12 w-full">
       <Toaster position="top-center" />
       <form onSubmit={handleUpload} className="space-y-6">
-        <h5 className="text-xl font-bold text-[#142528] text-center">
+        <h5 className="text-xl font-bold text-[#fff] text-center">
           KYC Verification
         </h5>
 
         <select
           value={selectedOption}
           onChange={handleOptionChange}
-          className="w-full px-4 py-3 bg-[#e6f8ef] text-[#3f6870] rounded-lg border border-[#07A658] focus:outline-none focus:ring-2 focus:ring-[#07A658]"
+          className="w-full px-4 py-3 bg-[#0a0f1f] text-[#fff] rounded-lg border border-[#07A658] focus:outline-none focus:ring-2 focus:ring-[#07A658]"
         >
           <option value="Passport">Passport</option>
           <option value="Driving License">Driving License</option>
         </select>
 
         <div>
-          <label className="block mb-2 text-sm text-[#3f6870] font-medium">Front Cover</label>
+          <label className="block mb-2 text-sm text-[#fff] font-medium">Front Cover</label>
           <input
             type="file"
             onChange={handleFrontChange}
-            className="w-full px-4 py-2 bg-[#e6f8ef] text-[#142528] rounded-lg border border-[#07A658] focus:outline-none"
+            className="w-full px-4 py-2 bg-[#0a0f1f] text-[#fff] rounded-lg border border-[#07A658] focus:outline-none"
           />
         </div>
 
         {selectedOption === "Driving License" && (
           <div>
-            <label className="block mb-2 text-sm text-[#3f6870] font-medium">Back Cover</label>
+            <label className="block mb-2 text-sm text-[#fff] font-medium">Back Cover</label>
             <input
               type="file"
               onChange={handleBackChange}
-              className="w-full px-4 py-2 bg-[#e6f8ef] text-[#142528] rounded-lg border border-[#07A658] focus:outline-none"
+              className="w-full px-4 py-2 bg-[#0a0f1f] text-[#fff] rounded-lg border border-[#07A658] focus:outline-none"
             />
           </div>
         )}

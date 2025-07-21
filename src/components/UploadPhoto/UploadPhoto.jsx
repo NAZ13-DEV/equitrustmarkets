@@ -92,14 +92,14 @@ const UploadPhoto = () => {
         .delay-100 { animation-delay: 100ms; }
         .delay-200 { animation-delay: 200ms; }
       `}</style>
-      <div className="flex justify-center items-center bg-[#e6f8ef] px-4 sm:px-6 py-8  animate-fade-in">
+      <div className="flex justify-center items-center bg-[#0a0f1f] px-4 sm:px-6 py-8  animate-fade-in">
         <Toaster position="top-center" />
         <form
           onSubmit={handleUpload}
-          className="w-full max-w-md bg-[#e6f8ef]/80 backdrop-blur-sm rounded-xl shadow-xl p-6 sm:p-8 border border-[#3f6870]/50"
+          className="w-full max-w-md bg-[#0a0f1f]/80 backdrop-blur-sm rounded-xl shadow-xl p-6 sm:p-8 border border-[#0bf33e]/50"
         >
           <div className="mb-6 text-center sm:mb-8">
-            <h5 className="text-2xl sm:text-3xl font-bold text-[#142528] animate-fade-in">
+            <h5 className="text-2xl sm:text-3xl font-bold text-[#fff] animate-fade-in">
               Upload Your Desired Profile Picture
             </h5>
             <div className="w-16 h-1 bg-gradient-to-r from-[#07A658] to-[#3f6870] rounded-full mx-auto mt-2"></div>
@@ -108,7 +108,7 @@ const UploadPhoto = () => {
           <input
             type="file"
             onChange={handleFileChange}
-            className="w-full px-4 py-3 sm:py-4 text-base text-[#3f6870] bg-[#e6f8ef] border border-[#3f6870]/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#07A658] transition-all duration-300 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:bg-[#07A658] file:text-white file:rounded-md file:hover:bg-[#07A658]/80 file:animate-pulse-hover animate-fade-in delay-100"
+            className="w-full px-4 py-3 sm:py-4 text-base text-[#fff] bg-[#0a0f1f] border border-[#0bf33e]/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#07A658] transition-all duration-300 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:bg-[#07A658] file:text-white file:rounded-md file:hover:bg-[#07A658]/80 file:animate-pulse-hover animate-fade-in delay-100"
           />
 
           <button

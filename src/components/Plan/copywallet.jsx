@@ -93,23 +93,23 @@ const CopyWallet = ({
         .delay-200 { animation-delay: 200ms; }
         .delay-300 { animation-delay: 300ms; }
       `}</style>
-      <div className="col-span-12 p-4 bg-[#e6f8ef] rounded-xl lg:px-7 lg:py-6 xl:col-span-12 animate-fade-in">
+      <div className="col-span-12 p-4 bg-[#0a0f1f] rounded-xl lg:px-7 lg:py-6 xl:col-span-12 animate-fade-in">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
           <div className="w-full">
-            <div className="col-span-12 p-4 bg-[#e6f8ef] rounded-xl lg:px-7 lg:py-6 xl:col-span-6 animate-card-pulse">
+            <div className="col-span-12 p-4 bg-[#0a0f1f] rounded-xl lg:px-7 lg:py-6 xl:col-span-6 animate-card-pulse">
               <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                 <div className="w-full">
-                  <h5 className="text-base sm:text-lg font-bold text-[#142528] mb-3 text-center animate-fade-in">
+                  <h5 className="text-base sm:text-lg font-bold text-[#fff] mb-3 text-center animate-fade-in">
                     Preferred Deposit Amount {currency}
                     {amount ?? 0.0} with a value of {coinValue?.toFixed(4) ?? 0.0}{' '}
                     {methodSign}
                   </h5>
-                  <h5 className="text-base sm:text-lg font-bold text-[#142528] text-center animate-fade-in delay-100">
+                  <h5 className="text-base sm:text-lg font-bold text-[#fff] text-center animate-fade-in delay-100">
                     Please send your payment to one of the below listed crypto-currency addresses.
                   </h5>
 
-                  <div className="flex items-center justify-center">
-                    <div className="w-full bg-[#e6f8ef] flex justify-center items-center">
+                  <div className="flex items-center justify-center mt-4">
+                    <div className="w-full bg-[#0a0f1f] flex justify-center items-center">
                       <div className="flex flex-col items-start max-w-4xl gap-6 mx-5 sm:flex-row">
                         <div className="flex-shrink-0 w-full sm:w-1/2">
                           <div className="h-60 sm:h-80 lg:h-96">
@@ -122,7 +122,7 @@ const CopyWallet = ({
                         </div>
 
                         <div className="w-full sm:w-1/2">
-                          <h1 className="text-lg sm:text-2xl font-semibold text-[#142528] animate-fade-in delay-200">
+                          <h1 className="text-lg sm:text-2xl font-semibold text-[#fff] animate-fade-in delay-200">
                             {method?.toUpperCase()} ADDRESS
                           </h1>
                           <div className="mt-4 space-y-4">
@@ -131,7 +131,7 @@ const CopyWallet = ({
                                 type="text"
                                 value={wallet}
                                 readOnly
-                                className="w-full px-4 py-2 border rounded-lg border-[#3f6870]/50 bg-[#e6f8ef] text-[#3f6870] focus:outline-none focus:ring-2 focus:ring-[#07A658] transition-all duration-300"
+                                className="w-full px-4 py-2 border rounded-lg border-[#3f6870]/50 bg-[#0a0f1f] text-[#fff] focus:outline-none focus:ring-2 focus:ring-[#07A658] transition-all duration-300"
                               />
                               <button
                                 type="button"
@@ -144,7 +144,7 @@ const CopyWallet = ({
                               </button>
                             </div>
 
-                            <h5 className="text-base sm:text-lg font-bold text-[#142528] text-center mt-12 animate-fade-in delay-300">
+                            <h5 className="text-base sm:text-lg font-bold text-[#fff] text-center mt-12 animate-fade-in delay-300">
                               Scan to Copy Wallet Details
                             </h5>
                             <div className="text-center">

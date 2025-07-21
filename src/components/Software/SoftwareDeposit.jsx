@@ -59,10 +59,10 @@ const SoftwareDeposit = ({ plan, min, max, name, price }) => {
           transition: transform 0.3s ease-in-out;
         }
       `}</style>
-      <div className="bg-[#e6f8ef] flex items-center justify-center px-2 sm:px-4 py-6 sm:py-10 min-h-screen animate-fade-in">
-        <div className="w-full max-w-4xl bg-[#e6f8ef] rounded-2xl shadow-lg p-4 sm:p-6 lg:p-10 transition-all duration-300 border border-[#3f6870]/50 animate-card-pulse">
+      <div className="bg-[#0a0f1f] flex items-center justify-center px-2 sm:px-4 py-6 sm:py-10 min-h-screen animate-fade-in">
+        <div className="w-full max-w-4xl bg-[#0a0f1f] rounded-2xl shadow-lg p-4 sm:p-6 lg:p-10 transition-all duration-300 border border-[#045e18] animate-card-pulse">
           <div className="mb-6 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#142528] animate-fade-in">{plan}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#fff] animate-fade-in">{plan}</h2>
             {/* {price && (
               <p className="mt-1 text-base sm:text-lg text-[#3f6870] animate-fade-in delay-100">
                 Price: ${price.toLocaleString()}

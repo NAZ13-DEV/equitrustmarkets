@@ -25,17 +25,17 @@ const KycStatus = () => {
 
   return (
     <section className="flex justify-center w-full px-2 py-4">
-    <div className="w-full max-w-[95%] sm:max-w-2xl md:max-w-3xl bg-white border border-[#07A658] shadow-xl rounded-xl p-3 sm:p-5 md:p-8 text-center animate-fade-in">
-      <h3 className="mb-3 text-xl xxs:text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold leading-snug text-[#142528]">
+    <div className="w-full max-w-[95%] sm:max-w-2xl md:max-w-3xl bg-[#0a0f1f] border border-[#07A658] shadow-xl rounded-xl p-3 sm:p-5 md:p-8 text-center animate-fade-in">
+      <h3 className="mb-3 text-xl xxs:text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold leading-snug text-[#fff]">
         KYC Submitted
       </h3>
   
-      <p className="mx-auto text-sm xxs:text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#3f6870] max-w-[92%] sm:max-w-[90%]">
+      <p className="mx-auto text-sm xxs:text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#fff] max-w-[92%] sm:max-w-[90%]">
         Your KYC submission has been received and is awaiting approval. We will notify you once the verification is complete.
       </p>
   
       <div className="flex justify-center mt-6">
-        <div className="w-[120px] sm:w-[140px] md:w-[160px] h-2 bg-gradient-to-r from-[#07A658] to-[#3f6870] rounded-full animate-pulse" />
+        <div className="w-[120px] sm:w-[140px] md:w-[160px] h-2 bg-gradient-to-r from-[#07A658] to-[#27dd0f] rounded-full animate-pulse" />
       </div>
     </div>
   

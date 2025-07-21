@@ -27,12 +27,12 @@ const KycPage = () => {
   }, [user]);
 
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 py-10 mx-auto max-w-6xl rounded-2xl bg-white border border-[#07A658] shadow-xl">
+    <section className="w-full px-4 sm:px-6 lg:px-8 py-10 mx-auto max-w-6xl rounded-2xl bg-[#0a0f1f] border border-[#07A658] shadow-xl">
       <div className="px-2 mb-8 text-center">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#142528]">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#fff]">
           KYC Verification
         </h2>
-        <p className="mt-2 text-sm sm:text-base text-[#3f6870] max-w-xl mx-auto">
+        <p className="mt-2 text-sm sm:text-base text-[#fff] max-w-xl mx-auto">
           Verify your identity to activate all features of your account.
         </p>
       </div>

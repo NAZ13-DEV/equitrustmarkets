@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../../img/fav.png";
+import Logo1 from '../../img/fav.png';
 import ProfileFallback from "../../../public/userProfile.svg";
 import MobileMenuDashboard from "./MobileMenuDashboard";
 import DashboardPage from "./DashboardPage";
@@ -171,16 +172,19 @@ const DashboardRender = () => {
   }, [resetInactivityTimer]);
 
   return (
-  <div className="flex flex-col min-h-screen bg-gradient-to-r from-white to-green-50">
-  <div className="flex flex-col flex-1 w-full mx-auto lg:flex-row max-w-screen-2xl">
+  <div className="flex flex-col min-h-screen bg-[#0a0f1f]">
+  <div className="flex flex-col flex-1 w-full mx-auto lg:flex-row max-w-screen-2xl bg-[#0a0f1f]">
     {/* Sidebar */}
     <aside
-      className={`fixed top-0 left-0 z-40 w-4/5 xs:w-3/4 sm:w-64 h-screen bg-[#0a0f1f] text-white py-6 px-3 sm:px-4 transition-transform duration-300 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 ${
+      className={`fixed top-0 left-0 z-40 w-4/5 xs:w-3/4 sm:w-64 h-screen bg-[#0a0f1f] text-white py-6 px-3 border-2 border-r-green-900 sm:px-4 transition-transform duration-300 ease-in-out lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
       <div className="flex items-center justify-between mb-8 lg:justify-center">
-        <img src={logo} alt="logo" className="h-8 sm:h-10" />
+        <div className="flex items-center gap-2">
+                          <img src={Logo1} alt="Logo" className="w-8" />
+                          <span className="text-lg font-bold">EquitrustMarkets</span>
+                        </div>
         <button className="text-white lg:hidden" onClick={() => setIsOpen(false)}>
           <FaTimes className="text-xl sm:text-2xl" />
         </button>
@@ -215,7 +219,7 @@ const DashboardRender = () => {
     {/* Main Content */}
     <div className="flex flex-col flex-1 w-full min-h-screen overflow-x-hidden">
       {/* Navbar */}
-      <header className="sticky top-0 z-50 flex items-center justify-between w-full px-3 py-3 bg-white border-b border-green-200 shadow-md sm:px-4">
+      <header className="sticky top-0 z-50 flex items-center justify-between w-full px-3 py-3 bg-[#0a0f1f]  border-2 border-b-green-900 shadow-md sm:px-4">
         <div className="flex items-center gap-2 sm:gap-4">
           <button onClick={() => setIsOpen(true)} className="text-xl text-green-700 sm:text-2xl lg:hidden">
             <FaBars />
@@ -230,7 +234,7 @@ const DashboardRender = () => {
           <div className="relative" ref={notificationRef}>
             <button
               onClick={() => setShowNotificationDropdown((prev) => !prev)}
-              className="relative flex items-center justify-center w-8 h-8 bg-green-100 rounded-full sm:w-9 sm:h-9 hover:ring-2 hover:ring-green-400"
+              className="relative flex items-center justify-center w-8 h-8 border border-green-400 rounded-full sm:w-9 sm:h-9 hover:ring-2 hover:ring-green-400"
             >
               <FaBell className="text-base text-green-700 sm:text-lg" />
               {notifications.length > 0 && (
@@ -238,8 +242,8 @@ const DashboardRender = () => {
               )}
             </button>
             {showNotificationDropdown && (
-              <div className="absolute right-0 mt-2 w-[85vw] max-w-xs bg-white text-black rounded-lg border border-gray-200 shadow-xl p-3 sm:p-4 z-50 max-h-[300px] overflow-y-auto">
-                <h3 className="pb-2 mb-3 text-base font-semibold border-b border-gray-300 sm:text-lg">
+              <div className="absolute right-0 mt-2 w-[85vw] max-w-xs bg-[#0a0f1f] text-black rounded-lg border border-gray-200 shadow-xl p-3 sm:p-4 z-50 max-h-[300px] overflow-y-auto">
+                <h3 className="pb-2 mb-3 text-base font-semibold text-white border-b border-gray-300 sm:text-lg">
                   Notifications
                 </h3>
                 {notifications.length === 0 ? (
@@ -247,8 +251,8 @@ const DashboardRender = () => {
                 ) : (
                   notifications.slice(0, 7).map((item) => (
                     <div key={item.id} className="pb-2 mb-3 text-xs border-b border-gray-200 sm:text-sm">
-                      <p className="font-semibold">{item.messageHeader}</p>
-                      <p className="text-gray-600">{item.content}</p>
+                      <p className="font-semibold text-white">{item.messageHeader}</p>
+                      <p className="text-white ">{item.content}</p>
                     </div>
                   ))
                 )}
@@ -267,27 +271,27 @@ const DashboardRender = () => {
                 alt="Profile"
                 className="w-8 h-8 border-2 border-green-500 rounded-full sm:w-9 sm:h-9 group-hover:ring-2 group-hover:ring-green-400"
               />
-              <p className="text-xs sm:text-sm font-semibold text-green-900 truncate max-w-[100px]">
+              <p className="text-xs sm:text-sm font-semibold text-white truncate max-w-[100px]">
                 {user?.firstName} {user?.last_Name}
               </p>
             </div>
             {showProfileMenu && (
-              <div className="absolute right-0 z-50 mt-2 w-[85vw] max-w-sm sm:w-56 bg-white text-black border border-gray-200 rounded-lg shadow-xl">
-                <div className="px-3 py-3 border-b border-gray-200 sm:px-4">
-                  <p className="text-xs text-gray-400">Welcome</p>
-                  <p className="text-xs font-semibold truncate sm:text-sm">
+              <div className="absolute right-0 z-50 mt-2 w-[85vw] max-w-sm sm:w-56 bg-[#0a0f1f] text-black border border-gray-200 rounded-lg shadow-xl">
+                <div className="px-3 py-3 text-white border-b border-gray-200 sm:px-4">
+                  <p className="text-xs text-white">Welcome</p>
+                  <p className="text-xs font-semibold text-white truncate sm:text-sm ">
                     {user?.firstName} {user?.last_Name}
                   </p>
                 </div>
                 <Link
                   onClick={() => handleTabChange("settings")}
-                  className="block px-3 py-2 text-xs sm:px-4 sm:text-sm hover:bg-gray-100"
+                  className="block px-3 py-2 text-xs text-white sm:px-4 sm:text-sm hover:bg-green-800"
                 >
                   <FaCog className="mr-2 text-gray-400" /> Settings
                 </Link>
                 <button
                   onClick={() => handleTabChange("logout")}
-                  className="block w-full px-3 py-2 text-xs text-left text-red-500 sm:px-4 sm:text-sm hover:bg-red-100 hover:text-red-800"
+                  className="block w-full px-3 py-2 text-xs text-left text-red-500 sm:px-4 sm:text-sm hover:bg-green-800 hover:text-red-800"
                 >
                   <FaSignOutAlt className="mr-2" /> Log out
                 </button>
@@ -303,12 +307,12 @@ const DashboardRender = () => {
       )}
 
       {/* Main Content */}
-      <main className="flex-grow px-2 py-4 overflow-y-auto bg-white sm:px-4 sm:py-8">
+      <main className="flex-grow px-2 py-4 overflow-y-auto bg-[#0a0f1f] sm:px-4 sm:py-8">
         {loading ? <GreenLoader /> : tabComponents[activeTab]}
       </main>
 
       {/* Footer */}
-      <footer className="py-4 text-xs sm:text-sm font-medium text-center text-[#3f6870] bg-white border-t">
+      <footer className="py-4 text-xs sm:text-sm font-medium text-center text-white bg-[#0a0f1f] border-t border-green-900">
         © {new Date().getFullYear()} Equitrustmarkets. All rights reserved.
       </footer>
     </div>

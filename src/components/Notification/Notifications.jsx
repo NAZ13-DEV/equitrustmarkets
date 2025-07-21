@@ -83,22 +83,22 @@ const Notifications = () => {
           scroll-behavior: smooth;
         }
       `}</style>
-      <div className="min-h-screen p-2 sm:p-4 lg:p-8 bg-[#e6f8ef] animate-fade-in">
-        <div className="max-w-4xl mx-auto bg-[#e6f8ef] p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl border border-[#3f6870]/50">
+      <div className="min-h-screen p-2 sm:p-4 lg:p-8 bg-[#0a0f1f] animate-fade-in">
+        <div className="max-w-4xl mx-auto bg-[#0a0f1f] p-4 sm:p-6 lg:p-8 rounded-2xl shadow-xl border border-[#045e18]">
           <div className="flex items-center justify-between gap-3 mb-6">
             <div className="flex items-center gap-3">
-              <Bell className="text-[#07A658] w-6 h-6 sm:w-8 sm:h-8" />
-              <h2 className="text-[#142528] text-2xl sm:text-3xl font-bold">Notifications</h2>
+              <Bell className="text-[#10ca70] w-6 h-6 sm:w-8 sm:h-8" />
+              <h2 className="text-[#fff] text-2xl sm:text-3xl font-bold">Notifications</h2>
             </div>
             <span className="bg-[#07A658] text-white text-xs font-semibold px-2.5 py-1 rounded-full animate-badge-pulse">
               {notifications.length}
             </span>
           </div>
           <div className="relative mb-6">
-            <p className="text-[#3f6870] text-sm sm:text-base">
+            <p className="text-[#fff] text-sm sm:text-base">
               Get updates on your trading activity, system messages, and alerts.
             </p>
-            <div className="absolute bottom-0 left-0 w-16 h-1 bg-gradient-to-r from-[#07A658] to-[#3f6870] rounded-full"></div>
+            <div className="absolute bottom-0 left-0 w-16 h-1 bg-gradient-to-r from-[#045e18] to-[#0a8834] rounded-full"></div>
           </div>
 
           <div className="space-y-4">
@@ -106,17 +106,17 @@ const Notifications = () => {
               <div
                 key={item.id}
                 ref={(el) => (notificationRefs.current[index] = el)}
-                className="p-4 sm:p-5 rounded-xl bg-[#e6f8ef]/80 backdrop-blur-sm border border-[#3f6870]/50 transition-all duration-300 hover:shadow-lg hover:border-[#07A658]/80 animate-slide-in"
+                className="p-4 sm:p-5 rounded-xl bg-[#0a0f1f] backdrop-blur-sm border border-[#07A658] transition-all duration-300 hover:shadow-lg hover:border-[#07A658]/80 animate-slide-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
                   <div>
-                    <h4 className="text-[#142528] text-base sm:text-lg font-semibold mb-1">
+                    <h4 className="text-[#fff] text-base sm:text-lg font-semibold mb-1">
                       {item.messageHeader}
                     </h4>
-                    <p className="text-[#3f6870] text-sm sm:text-base">{item.content}</p>
+                    <p className="text-[#fff] text-sm sm:text-base">{item.content}</p>
                   </div>
-                  <span className="text-[#3f6870] text-xs sm:text-sm sm:ml-4 whitespace-nowrap">
+                  <span className="text-[#fff] text-xs sm:text-sm sm:ml-4 whitespace-nowrap">
                     {formatDate(item.sent_at)}
                   </span>
                 </div>

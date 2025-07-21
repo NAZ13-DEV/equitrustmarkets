@@ -83,10 +83,10 @@ const History = () => {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-[#e6f8ef] flex items-center justify-center px-4 py-10">
+    <div className="min-h-screen bg-[#0a0f1f] flex items-center justify-center px-4 py-10">
       <section className="grid w-full max-w-screen-xl grid-cols-12 gap-6">
-        <div className="col-span-12 xl:col-span-11 bg-[#e6f8ef] rounded-2xl p-4 lg:p-6">
-          <div className="w-full h-full bg-[#e6f8ef] rounded-2xl p-4 lg:p-6">
+        <div className="col-span-12 xl:col-span-11 bg-[#0a0f1f] rounded-2xl p-4 lg:p-6">
+          <div className="w-full h-full bg-[#0a0f1f] rounded-2xl border border-green-400 p-4 lg:p-6">
             <Tab.Group>
               <Tab.List className="flex flex-wrap gap-3 mb-6">
                 {tabData.map(({ label }, index) => (
@@ -96,7 +96,7 @@ const History = () => {
                         className={`text-sm md:text-base font-semibold px-4 py-2 rounded-md transition-colors border-b-2 ${
                           selected
                             ? "text-[#07A658] border-[#07A658]"
-                            : "text-[#3f6870] hover:text-[#07A658] border-transparent"
+                            : "text-[#fff] hover:text-[#07A658] border-transparent"
                         }`}
                       >
                         {label}
@@ -109,8 +109,8 @@ const History = () => {
               <Tab.Panels>
                 {tabData.map(({ label, data, emptyMessage }, panelIndex) => (
                   <Tab.Panel key={panelIndex}>
-                    <div className="bg-[#e6f8ef] rounded-xl p-4 overflow-x-auto min-h-[300px]">
-                      <h5 className="mb-4 text-xl font-semibold text-[#142528]">
+                    <div className="bg-[#0a0f1f] rounded-xl p-4 overflow-x-auto min-h-[300px]">
+                      <h5 className="mb-4 text-xl font-semibold text-[#fff]">
                         {label}
                       </h5>
 
@@ -124,7 +124,7 @@ const History = () => {
                         </div>
                       ) : (
                         <table className="w-full text-sm text-left md:text-base whitespace-nowrap">
-                          <thead className="font-bold border-b text-[#07A658] border-[#07A658]/50">
+                          <thead className="font-bold border-b text-[#fff] border-[#07A658]/50">
                             <tr>
                               {/* Deposit History columns */}
                               {panelIndex === 0 && (
@@ -218,26 +218,26 @@ const History = () => {
                               )}
                             </tr>
                           </thead>
-                          <tbody className="text-[#3f6870] divide-y divide-[#3f6870]/30">
+                          <tbody className="text-[#fff] divide-y divide-[#fff]/30">
                             {data.map((dataItem, i) => (
                               <tr
                                 key={dataItem.id || i}
                                 className={
                                   panelIndex === 0
-                                    ? "bg-[#07A658]/10 text-[#3f6870]"
+                                    ? "bg-[#07A658]/10 text-[#fff]"
                                     : panelIndex === 1 || panelIndex === 2
-                                    ? "bg-red-500/10 text-[#3f6870]"
+                                    ? "bg-green-500/10 text-[#fff]"
                                     : panelIndex === 3
                                     ? dataItem.type?.toLowerCase() === "loss"
-                                      ? "bg-red-500/10 text-[#3f6870]"
+                                      ? "bg-green-500/10 text-[#fff]"
                                       : dataItem.type?.toLowerCase() ===
                                         "profit"
-                                      ? "bg-[#07A658]/10 text-[#3f6870]"
+                                      ? "bg-[#07A658]/10 text-[#fff]"
                                       : ""
                                     : panelIndex === 4
-                                    ? "bg-blue-500/10 text-[#3f6870]"
+                                    ? "bg-blue-500/10 text-[#fff]"
                                     : panelIndex === 5
-                                    ? "bg-purple-500/10 text-[#3f6870]"
+                                    ? "bg-purple-500/10 text-[#fff]"
                                     : ""
                                 }
                               >

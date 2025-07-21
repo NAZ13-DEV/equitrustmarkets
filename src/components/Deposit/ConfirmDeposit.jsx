@@ -60,18 +60,18 @@ export default function UploadProof({ isLoading, setIsLoading }) {
   };
 
   return (
-    <div className="col-span-12 p-6 rounded-xl bg-white border border-[#07A658] shadow-md animate-fade-in lg:px-10 xl:col-span-12">
+    <div className="col-span-12 p-6 rounded-xl bg-[#0a0f1f]  shadow-md animate-fade-in lg:px-10 xl:col-span-12">
     <Toaster position="top-center" />
     <form onSubmit={handleUpload}>
       <div className="flex flex-col items-center justify-center gap-6 mb-6">
-        <h5 className="text-xl font-bold text-[#142528] text-center">
+        <h5 className="text-xl font-bold text-[#fff] text-center">
           Upload Proof of Payment
         </h5>
 
         <input
           type="file"
           onChange={handleFileChange}
-          className="w-full px-4 py-3 bg-[#e6f8ef] text-[#3f6870] border border-[#07A658] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#07A658]"
+          className="w-full px-4 py-3 bg-[#0a0f1f] text-[#fff] border border-[#07A658] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#07A658]"
         />
 
         <button
