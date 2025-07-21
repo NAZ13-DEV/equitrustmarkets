@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../redux/slices/api';
@@ -24,12 +25,14 @@ const UploadProof = ({ isLoading, setIsLoading, plan }) => {
       toast.error('User session not found. Please log in again.');
       return;
     }
-
+ const createdAt= new Date().toLocaleString("en-US", {
+            timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
+ });
     const LoginData = new FormData();
     LoginData.append('id', sessionGetUserID);
     LoginData.append('documents', file);
     LoginData.append('plan', plan);
-
+  LoginData.append('createAt', createdAt);
     try {
       setIsLoading(true);
       const response = await api.post('uploadproof', LoginData);

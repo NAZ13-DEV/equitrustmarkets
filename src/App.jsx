@@ -32,6 +32,8 @@ import Stock from "./pages/Stock";
 import Calculator from "./pages/Calculator";
 import Tools from "./pages/Tools";
 import CurrencyConverter from "./pages/CurrencyConverter";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 // Title Map
 const titleMap = {
@@ -60,6 +62,8 @@ const titleMap = {
   "/calculator": "Calculator | EquitrustMarkets",
   "/tools": "Tools | EquitrustMarkets",
   "/currency-converter": "Currency Converter | EquitrustMarkets",
+  "/terms": "Terms | EquitrustMarkets",
+  "/privacy": "Privacy | EquitrustMarkets",
 
 
   "*": "Page Not Found | EquitrustMarkets",
@@ -106,6 +110,8 @@ const App = () => {
         <Route path="/calculator" element={<PublicRoute><Calculator /></PublicRoute>} />
         <Route path="/tools" element={<PublicRoute><Tools /></PublicRoute>} />
         <Route path="/currency-converter" element={<PublicRoute><CurrencyConverter /></PublicRoute>} />
+        <Route path="/terms" element={<PublicRoute><Terms /></PublicRoute>} />
+        <Route path="/privacy" element={<PublicRoute><Privacy /></PublicRoute>} />
 
 
 
