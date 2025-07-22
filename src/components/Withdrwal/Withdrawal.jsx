@@ -1,22 +1,21 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect, Fragment } from "react";
 import api from "../../redux/slices/api";
-import toast, { Toaster } from "react-hot-toast";
-import { Tab, Dialog, Transition } from "@headlessui/react";
+import { Tab } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   fetchUserDetails,
   clearUserState,
 } from "../../redux/slices/fetchUserSlice";
+import { Player } from '@lottiefiles/react-lottie-player';
+import successAnim from './success-checkmark.json';
+import { X } from "lucide-react";
 
 const Withdrawal = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
-
   const [withdrawData, setWithdrawData] = useState({
     payment_mode: "Bitcoin Withdrawal",
     amount: "",
@@ -31,6 +30,8 @@ const Withdrawal = () => {
       timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     }),
   });
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
 
   const { user } = useSelector((state) => state.fetchUserDetails);
 
@@ -51,7 +52,6 @@ const Withdrawal = () => {
       (mode === "Bitcoin Withdrawal" || mode === "Ethereum Withdrawal") &&
       (!withdrawData.address || !withdrawData.amount)
     ) {
-      toast.error("Address and Amount are required for Crypto Withdrawal");
       return false;
     }
 
@@ -66,7 +66,6 @@ const Withdrawal = () => {
       ];
       for (let field of required) {
         if (!withdrawData[field]) {
-          toast.error("All bank fields are required");
           return false;
         }
       }
@@ -79,7 +78,7 @@ const Withdrawal = () => {
     if (!validateFields()) return;
 
     const uId = localStorage.getItem("uId");
-    if (!uId) return toast.error("User ID not found");
+    if (!uId) return;
 
     const baseData = {
       userId: uId,
@@ -98,21 +97,24 @@ const Withdrawal = () => {
         narration: withdrawData.narration,
       };
 
-      toast.loading("Processing Bank withdrawal...", { id: "withdrawalToast" });
+      setIsLoading(true);
       api
         .post("bankWithdrawal", bankData)
         .then((res) => {
           if (res.status === 201 && res.data.message === "true") {
-            toast.dismiss("withdrawalToast");
             setModalContent(
               <>
-                <p className="text-lg font-semibold">
+                <p className="font-semibold">
                   Dear {user?.firstName} {user?.last_Name},
                 </p>
-                <p className="mt-2 text-sm text-white/90">
-                  Your withdrawal request of <span className="font-semibold">{user?.currency}{withdrawData?.amount}</span> to account number{" "}
-                  <span className="font-semibold">{bankData?.accountNumber}</span> in{" "}
-                  <span className="font-semibold">{bankData?.bankName}</span> has been successfully initiated and is awaiting approval. 
+                <p className="mt-2">
+                  Your withdrawal request of {user?.currency}
+                  {withdrawData?.amount} to your account number{" "}
+                  <span className="font-semibold">
+                    {bankData?.accountNumber}
+                  </span>{" "}
+                  in <span className="font-semibold">{bankData?.bankName}</span>{" "}
+                  has been successfully initiated and is awaiting approval.
                   Please do not resend your request.
                 </p>
               </>
@@ -120,44 +122,54 @@ const Withdrawal = () => {
             setShowModal(true);
           }
         })
-        .catch(() => toast.error("Bank withdrawal failed"))
-        .finally(() => toast.dismiss("withdrawalToast"));
+        .catch(() => {})
+        .finally(() => setIsLoading(false));
     } else {
       const cryptoData = {
         ...baseData,
         wallet: withdrawData.address,
         createdAt: withdrawData.createdAt,
       };
-      const label = withdrawData.payment_mode.includes("Ethereum") ? "Ethereum" : "Bitcoin";
+      const label = withdrawData.payment_mode.includes("Ethereum")
+        ? "Ethereum"
+        : "Bitcoin";
 
-      toast.loading(`Processing ${label} withdrawal...`, { id: "withdrawalToast" });
+      setIsLoading(true);
       api
         .post("CryptoWithdrawal", cryptoData)
         .then((res) => {
           if (res.status === 201 && res.data.message === "true") {
-            toast.dismiss("withdrawalToast");
             setModalContent(
               <>
-                <p className="text-lg font-semibold">
+                <p className="font-semibold">
                   Dear {user?.firstName} {user?.last_Name},
                 </p>
-                <p className="mt-2 text-sm text-white/90">
-                  Your {label} withdrawal request of <span className="font-semibold">{user?.currency}{withdrawData?.amount}</span> to wallet address{" "}
-                  <span className="font-semibold">{withdrawData?.address}</span> has been successfully initiated and is awaiting approval.
+                <p className="mt-2">
+                  Your withdrawal request of {user?.currency}
+                  {withdrawData?.amount} to your wallet address{" "}
+                  <span className="font-semibold">{withdrawData?.address}</span>{" "}
+                  has been successfully initiated and is awaiting approval.
+                  Please do not resend your request.
                 </p>
               </>
             );
             setShowModal(true);
           }
         })
-        .catch(() => toast.error(`${label} withdrawal failed`))
-        .finally(() => toast.dismiss("withdrawalToast"));
+        .catch(() => {})
+        .finally(() => setIsLoading(false));
     }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setTimeout(() => {
+      navigate("/dashboard", { state: { fromWithdraw: true } });
+    }, 2000);
   };
 
   return (
     <div className="bg-[#0a0f1f] flex items-center justify-center p-4 min-h-screen">
-      <Toaster position="top-center" />
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-3xl bg-[#0a0f1f] rounded-xl p-6 lg:p-10 shadow-lg border border-[#07A658]"
@@ -273,68 +285,27 @@ const Withdrawal = () => {
         </Tab.Group>
       </form>
 
-      {/* Modal */}
-      <Transition appear show={showModal} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={() => {
-          setShowModal(false);
-          setTimeout(() => {
-            navigate("/dashboard", { state: { fromWithdraw: true } });
-          }, 2000);
-        }}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex items-center justify-center min-h-full p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-xl bg-[#0a0f1f] border border-[#07A658] p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg font-bold leading-6 text-[#07A658]"
-                  >
-                    Withdrawal Initiated ✅
-                  </Dialog.Title>
-                  <div className="mt-4 space-y-4 text-white">
-                    {modalContent}
-                  </div>
-
-                  <div className="mt-6">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center w-full rounded-md border border-transparent bg-[#07A658] px-4 py-2 text-sm font-medium text-white hover:bg-[#05944f] transition"
-                      onClick={() => {
-                        setShowModal(false);
-                        setTimeout(() => {
-                          navigate("/dashboard", { state: { fromWithdraw: true } });
-                        }, 1500);
-                      }}
-                    >
-                      Close 
-                    </button>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative w-full max-w-md p-6 bg-white rounded-lg">
+            <button
+              onClick={closeModal}
+              className="absolute text-gray-500 top-2 right-2 hover:text-gray-700"
+            >
+              <X className="w-6 h-6 text-black" />
+            </button>
+            <div className="flex flex-col items-center">
+              <Player
+                autoplay
+                loop
+                src={successAnim}
+                style={{ height: '120px', width: '120px' }}
+              />
+              {modalContent}
             </div>
           </div>
-        </Dialog>
-      </Transition>
+        </div>
+      )}
     </div>
   );
 };
