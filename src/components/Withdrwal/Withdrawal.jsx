@@ -9,7 +9,7 @@ import {
   clearUserState,
 } from "../../redux/slices/fetchUserSlice";
 import { Player } from '@lottiefiles/react-lottie-player';
-import successAnim from './success-checkmark.json';
+import successAnim from './success-checkmark1.json';
 import { X } from "lucide-react";
 
 const Withdrawal = () => {
@@ -287,14 +287,14 @@ const Withdrawal = () => {
 
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative w-full max-w-md p-6 bg-white rounded-lg">
+          <div className="relative w-full max-w-md p-6 bg-green-800 rounded-lg">
             <button
               onClick={closeModal}
               className="absolute text-gray-500 top-2 right-2 hover:text-gray-700"
             >
-              <X className="w-6 h-6 text-black" />
+              <X className="w-6 h-6 text-white" />
             </button>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center text-white">
               <Player
                 autoplay
                 loop
