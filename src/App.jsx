@@ -113,13 +113,9 @@ const App = () => {
         <Route path="/terms" element={<PublicRoute><Terms /></PublicRoute>} />
         <Route path="/privacy" element={<PublicRoute><Privacy /></PublicRoute>} />
 
-
-
         {/* Protected Routes */}
         <Route path="/passwordReset" element={<ProtectedRoute><ResetPassword /></ProtectedRoute>} />
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-
-
         {/* Fallback */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
