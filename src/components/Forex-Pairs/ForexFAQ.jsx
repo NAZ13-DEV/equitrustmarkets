@@ -12,7 +12,7 @@ const faqs = [
   {
     question: 'What is leverage in forex trading?',
     answer:
-      'Leverage allows you to control a larger trade size with a smaller capital. At Equitrustmarkets, flexible leverage options are provided based on your trading experience.',
+      'Leverage allows you to control a larger trade size with a smaller capital. At Optima Trade Market, flexible leverage options are provided based on your trading experience.',
   },
   {
     question: 'What is margin in online forex trading?',
@@ -22,7 +22,7 @@ const faqs = [
   {
     question: 'Does my account equity affect the maximum leverage I can use?',
     answer:
-      'Yes, higher account equity may reduce available leverage according to our risk policy at Equitrustmarkets.',
+      'Yes, higher account equity may reduce available leverage according to our risk policy at Optima Trade Market.',
   },
   {
     question: 'Why are there higher margin requirements around news?',
@@ -46,8 +46,8 @@ export default function ForexFAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="px-6 py-20 bg-white">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+    <section className='px-6 py-20 bg-white'>
+      <div className='max-w-7xl mx-auto grid md:grid-cols-3 gap-10'>
         {/* Left Section */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -55,7 +55,7 @@ export default function ForexFAQ() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-semibold text-gray-900 leading-tight">
+          <h2 className='text-3xl font-semibold text-gray-900 leading-tight'>
             Frequently <br /> asked questions
           </h2>
         </motion.div>
@@ -66,18 +66,16 @@ export default function ForexFAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="md:col-span-2 space-y-2"
+          className='md:col-span-2 space-y-2'
         >
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (
-              <div key={index} className="border-b border-gray-300">
+              <div key={index} className='border-b border-gray-300'>
                 <button
-                  onClick={() =>
-                    setOpenIndex(isOpen ? null : index)
-                  }
-                  className="w-full flex justify-between items-center py-4 text-left text-sm font-medium text-gray-900 hover:text-green-600 transition"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className='w-full flex justify-between items-center py-4 text-left text-sm font-medium text-gray-900 hover:text-green-600 transition'
                 >
                   <span>{faq.question}</span>
                   <ChevronDown
@@ -92,7 +90,7 @@ export default function ForexFAQ() {
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="pb-4 text-sm text-gray-600"
+                    className='pb-4 text-sm text-gray-600'
                   >
                     {faq.answer}
                   </motion.div>

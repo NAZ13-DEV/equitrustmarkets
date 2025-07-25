@@ -15,35 +15,34 @@ const fadeInUp = {
 
 export default function DemoBenefits() {
   return (
-    <section className="bg-white px-4 py-16">
-      <motion.div
-        {...fadeInUp}
-        className="text-center max-w-2xl mx-auto mb-12"
-      >
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-          Benefits of using an EquitrustMarkets demo trading account
+    <section className='bg-white px-4 py-16'>
+      <motion.div {...fadeInUp} className='text-center max-w-2xl mx-auto mb-12'>
+        <h2 className='text-2xl md:text-3xl font-bold text-gray-900'>
+          Benefits of using an Optima Trade Marketdemo trading account
         </h2>
-        <p className="text-gray-600 mt-2 text-sm">
+        <p className='text-gray-600 mt-2 text-sm'>
           Our demo account can be your “secret weapon” to test out strategies
           and hone your skills with zero risk. Here’s how you’ll benefit:
         </p>
       </motion.div>
 
       {/* Top Grid: 2 Items */}
-      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-6">
+      <div className='grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-6'>
         {/* Skill Development */}
         <motion.div
           {...fadeInUp}
-          className="relative overflow-hidden rounded-lg shadow-md"
+          className='relative overflow-hidden rounded-lg shadow-md'
         >
           <img
             src={skillImg}
-            alt="Skill development"
-            className="w-full h-64 object-cover"
+            alt='Skill development'
+            className='w-full h-64 object-cover'
           />
-          <div className="absolute inset-0  bg-opacity-40 flex flex-col justify-end p-4">
-            <h3 className="text-white font-semibold text-lg">Skill development</h3>
-            <p className="text-white text-sm">
+          <div className='absolute inset-0  bg-opacity-40 flex flex-col justify-end p-4'>
+            <h3 className='text-white font-semibold text-lg'>
+              Skill development
+            </h3>
+            <p className='text-white text-sm'>
               Hone trading abilities, from market analysis to decision-making.
             </p>
           </div>
@@ -52,16 +51,18 @@ export default function DemoBenefits() {
         {/* Platform Orientation */}
         <motion.div
           {...fadeInUp}
-          className="relative overflow-hidden rounded-lg shadow-md"
+          className='relative overflow-hidden rounded-lg shadow-md'
         >
           <img
             src={platformImg}
-            alt="Platform orientation"
-            className="w-full h-64 object-cover"
+            alt='Platform orientation'
+            className='w-full h-64 object-cover'
           />
-          <div className="absolute inset-0 bg-opacity-40 flex flex-col justify-end p-4">
-            <h3 className="text-white font-semibold text-lg">Platform orientation</h3>
-            <p className="text-white text-sm">
+          <div className='absolute inset-0 bg-opacity-40 flex flex-col justify-end p-4'>
+            <h3 className='text-white font-semibold text-lg'>
+              Platform orientation
+            </h3>
+            <p className='text-white text-sm'>
               Get comfortable with trading platform tools and features.
             </p>
           </div>
@@ -71,16 +72,16 @@ export default function DemoBenefits() {
       {/* Centered Bottom Card: Strategy Testing */}
       <motion.div
         {...fadeInUp}
-        className="max-w-xl mx-auto relative overflow-hidden rounded-lg shadow-md"
+        className='max-w-xl mx-auto relative overflow-hidden rounded-lg shadow-md'
       >
         <img
           src={strategyImg}
-          alt="Strategy testing"
-          className="w-full h-64 object-cover"
+          alt='Strategy testing'
+          className='w-full h-64 object-cover'
         />
-        <div className="absolute inset-0  bg-opacity-10 flex flex-col justify-end p-4">
-          <h3 className="text-white font-semibold text-lg">Strategy testing</h3>
-          <p className="text-white text-sm">
+        <div className='absolute inset-0  bg-opacity-10 flex flex-col justify-end p-4'>
+          <h3 className='text-white font-semibold text-lg'>Strategy testing</h3>
+          <p className='text-white text-sm'>
             Experiment with various strategies in real market conditions.
           </p>
         </div>

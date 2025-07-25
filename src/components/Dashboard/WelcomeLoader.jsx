@@ -3,25 +3,25 @@ import BigLogo from '../../img/fav.png';
 
 const WelcomeLoader = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 bg-white">
-      <div className="text-center animate-fade-in-up">
-        <div className="flex items-center justify-center mb-8 animate-glow-up">
+    <div className='flex flex-col items-center justify-center min-h-screen px-4 bg-white'>
+      <div className='text-center animate-fade-in-up'>
+        <div className='flex items-center justify-center mb-8 animate-glow-up'>
           <img
             src={BigLogo}
-            alt="Equitrustmarkets"
-            className="w-24 h-24 border-4 border-green-500 rounded-full shadow-lg"
+            alt='Optima Trade Market'
+            className='w-24 h-24 border-4 border-green-500 rounded-full shadow-lg'
           />
         </div>
 
-        <h1 className="text-3xl font-extrabold text-green-700 sm:text-4xl md:text-5xl animate-text-glow">
+        <h1 className='text-3xl font-extrabold text-green-700 sm:text-4xl md:text-5xl animate-text-glow'>
           Welcome back, Broker
         </h1>
-        <p className="mt-3 tracking-wide text-green-600 text-md sm:text-lg">
+        <p className='mt-3 tracking-wide text-green-600 text-md sm:text-lg'>
           Preparing your trading dashboard...
         </p>
 
-        <div className="flex items-center justify-center mt-10">
-          <div className="scale-125 loader-dots" />
+        <div className='flex items-center justify-center mt-10'>
+          <div className='scale-125 loader-dots' />
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, MoreVertical } from 'lucide-react';
-import staderLogo from '../../img/stader-icon.png';
+import Optima Trade MarketLogo from '../../img/Optima Trade Market-icon.png';
 
 const Navbar = ({ toggleSidebar }) => {
   return (
@@ -14,8 +14,8 @@ const Navbar = ({ toggleSidebar }) => {
 
         {/* Logo - show on sm and md only */}
         <img
-          src={staderLogo}
-          alt="Stader Logo"
+          src={Optima Trade MarketLogo}
+          alt="Optima Trade Market Logo"
           className="hidden w-5   sm:block lg:hidden"
         />
       </div>

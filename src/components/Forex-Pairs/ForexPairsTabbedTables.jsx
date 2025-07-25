@@ -30,21 +30,21 @@ export default function ForexPairsTabbedTables() {
   const [activeTab, setActiveTab] = useState('majors');
 
   return (
-    <section className="bg-white py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className='bg-white py-16 px-4'>
+      <div className='max-w-6xl mx-auto'>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold text-center  mb-6"
+          className='text-3xl font-bold text-center  mb-6'
         >
-          Equitrustmarkets Forex Pairs
+          Optima Trade MarketForex Pairs
         </motion.h2>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-4 mb-8">
-          {forexTabs.map(tab => (
+        <div className='flex justify-center gap-4 mb-8'>
+          {forexTabs.map((tab) => (
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
@@ -60,37 +60,37 @@ export default function ForexPairsTabbedTables() {
         </div>
 
         {/* Tables */}
-        <div className="relative  lg:overflow-hidden overflow-x-auto">
-          <AnimatePresence mode="wait">
+        <div className='relative  lg:overflow-hidden overflow-x-auto'>
+          <AnimatePresence mode='wait'>
             <motion.table
               key={activeTab}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -30 }}
               transition={{ duration: 0.5 }}
-              className="w-full table-auto border border-gray-300 rounded shadow-md"
+              className='w-full table-auto border border-gray-300 rounded shadow-md'
             >
-              <thead className=" text-green-600  border-gray-300 border-b-1">
+              <thead className=' text-green-600  border-gray-300 border-b-1'>
                 <tr>
-                  <th className="px-4 py-3 text-left">Pair</th>
-                  <th className="px-4 py-3 text-left">Spread (pips)</th>
-                  <th className="px-4 py-3 text-left">Leverage</th>
-                  <th className="px-4 py-3 text-left">Commission</th>
+                  <th className='px-4 py-3 text-left'>Pair</th>
+                  <th className='px-4 py-3 text-left'>Spread (pips)</th>
+                  <th className='px-4 py-3 text-left'>Leverage</th>
+                  <th className='px-4 py-3 text-left'>Commission</th>
                 </tr>
               </thead>
-              <tbody className="text-gray-700">
+              <tbody className='text-gray-700'>
                 {forexData[activeTab].map((row, idx) => (
                   <motion.tr
                     key={idx}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 * idx }}
-                    className="even:bg-gray-50"
+                    className='even:bg-gray-50'
                   >
-                    <td className="px-4 py-3 font-medium">{row.pair}</td>
-                    <td className="px-4 py-3">{row.spread}</td>
-                    <td className="px-4 py-3">{row.leverage}</td>
-                    <td className="px-4 py-3">{row.commission}</td>
+                    <td className='px-4 py-3 font-medium'>{row.pair}</td>
+                    <td className='px-4 py-3'>{row.spread}</td>
+                    <td className='px-4 py-3'>{row.leverage}</td>
+                    <td className='px-4 py-3'>{row.commission}</td>
                   </motion.tr>
                 ))}
               </tbody>

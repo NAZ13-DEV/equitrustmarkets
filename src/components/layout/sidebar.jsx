@@ -57,7 +57,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         <div>
           {/* Mobile Close */}
           <div className="flex items-center justify-between mb-4 lg:hidden">
-            {/* <h2 className="text-xl font-bold">Stader</h2> */}
+            {/* <h2 className="text-xl font-bold">Optima Trade Market</h2> */}
             <h1></h1>
             <button onClick={onClose} className="text-2xl">&times;</button>
           </div>
@@ -65,7 +65,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           {/* Logo */}
           <div className="flex items-center gap-2 mb-6">
             <img src={logo} alt="logo" className="w-6 h-6" />
-            <span className="text-2xl font-semibold text-gray-800">Stader</span>
+            <span className="text-2xl font-semibold text-gray-800">Optima Trade Market</span>
           </div>
 
           {/* SD Navigation Card */}

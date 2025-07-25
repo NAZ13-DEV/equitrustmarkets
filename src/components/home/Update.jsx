@@ -11,7 +11,7 @@ const blogPosts = [
   },
   {
     image: liquidity,
-    title: 'Stader Labs: Building liquidity across chains',
+    title: 'Optima Trade Market: Building liquidity across chains',
     time: '4 mins read / updated on Wed Jan 22 2025',
   },
   {
@@ -84,11 +84,11 @@ export default function Update() {
       </div>
 
       {/* View more button */}
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center">
         <button className="px-6 py-2 border border-green-500 text-green-600 font-medium rounded-md hover:bg-green-50 transition text-sm">
           View more
         </button>
-      </div>
+      </div> */}
 
       {/* Animations */}
       <style>{`

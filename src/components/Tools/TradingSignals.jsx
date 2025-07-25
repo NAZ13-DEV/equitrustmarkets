@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { motion } from 'framer-motion';
-import signalImage from '../../img/signal.jpg'; 
+import signalImage from '../../img/signal.jpg';
 
 export default function TradingSignals() {
   return (
-    <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12 overflow-hidden">
+    <section className='py-20 px-6 md:px-12 max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12 overflow-hidden'>
       {/* Image Animation */}
       <motion.div
         initial={{ opacity: 0, x: -60, rotate: -3 }}
@@ -15,8 +15,8 @@ export default function TradingSignals() {
       >
         <img
           src={signalImage}
-          alt="Trading Signal Interface"
-          className="rounded-xl shadow-2xl border border-gray-200"
+          alt='Trading Signal Interface'
+          className='rounded-xl shadow-2xl border border-gray-200'
         />
       </motion.div>
 
@@ -27,17 +27,26 @@ export default function TradingSignals() {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 leading-tight">
-          Trading signals by <span className="text-green-600">EquitrustMarkets Intelligence</span>
+        <h2 className='text-3xl md:text-4xl font-bold mb-4 text-gray-900 leading-tight'>
+          Trading signals by{' '}
+          <span className='text-green-600'>
+            Optima Trade MarketIntelligence
+          </span>
         </h2>
 
-        <p className="text-gray-700 text-lg mb-4">
-          Leverage EquitrustMarkets signal engine to shape smarter strategies, time your entries with precision, and stay confident in any market condition.
+        <p className='text-gray-700 text-lg mb-4'>
+          Leverage Optima Trade Marketsignal engine to shape smarter strategies,
+          time your entries with precision, and stay confident in any market
+          condition.
         </p>
 
-        <p className="text-gray-600">
-          These real-time signals combine powerful analytics with multi-timeframe analysis. 
-          You can access them in your <a href="#" className="text-blue-600 hover:underline">EquitrustMarkets Portal</a>.
+        <p className='text-gray-600'>
+          These real-time signals combine powerful analytics with
+          multi-timeframe analysis. You can access them in your{' '}
+          <a href='#' className='text-blue-600 hover:underline'>
+            Optima Trade MarketPortal
+          </a>
+          .
         </p>
       </motion.div>
     </section>

@@ -24,7 +24,7 @@ const Home = () => {
             <Security/>
             <Partner/>
             <Update/>
-            <NewsLetter/>
+            {/* <NewsLetter/> */}
             <Faq/>
             <div className='mt-12'>
             <More/>
